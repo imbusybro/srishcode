@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+class hall_of_knowledge
+{
+    
+};
+class animal
+{
+    
+};
+class maze
+{
+    
+};
+class madhatter
+{
+    
+};
+class Alice : public hall_of_knowledge , public animal , public maze , public madhatter
+{
+    
+};
+int main()
+{
+    
+}
