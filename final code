@@ -1,0 +1,91 @@
+#include <iostream>
+using namespace std;
+
+class maze {
+private:
+    int complexity;
+    int exit;
+    int counter;
+public:
+    class question {
+    public:
+        string q;
+        string opt[4];
+        char correct;
+        question() {}
+        question(string p, string o1, string o2, string o3, string o4, char ca) {
+            q = p;
+            opt[0] = o1;
+            opt[1] = o2;
+            opt[2] = o3;
+            opt[3] = o4;
+            correct = ca;
+        }
+    };
+    question questions[20];
+    maze() : complexity(1), exit(20), counter(0) {
+        questions[0] = question("1. Alice, if a variable is declared inside a block, what is its scope?", "A) The entire program", "B) Until the end of that block", "C) Until the end of the function", "D) Until the program terminates", 'B');
+        questions[1] = question("2. Alice, which operator in C++ allows access to a global variable when a local variable has the same name?", "A) . (Dot operator)", "B) -> (Arrow operator)", "C) :: (Scope resolution operator)", "D) : (Colon operator)", 'C');
+        questions[2] = question("3. Alice, where can member functions be defined?", "A) Inside or outside the class definition", "B) Only inside the class definition", "C) Only outside the class definition", "D) Only in the main function", 'A');
+        questions[3] = question("4. Alice, which of the following is NOT true about friend functions?", "A) A friend function is not in the scope of the class it is declared in", "B) A friend function can access private members of a class", "C) A friend function can be declared in either public or private section", "D) A friend function can be called using the object of the class", 'D');
+        questions[4] = question("5. Alice, which type of data access allows child classes to access data but prevents access from outside the class?", "A) Private", "B) Public", "C) Protected", "D) Friend", 'C');
+        questions[5] = question("6. Alice, what is the purpose of a constructor in C++?", "A) To destroy objects", "B) To allocate memory dynamically", "C) To initialize an object when it is created", "D) To copy one object into another", 'C');
+        questions[6] = question("7. Alice, when is a copy constructor called?", "A) When an object is created and initialized at the same time", "B) When an object is deleted", "C) When a private member function is accessed", "D) When a function is overloaded", 'A');
+        questions[7] = question("8. Alice, what is the purpose of operator overloading in C++?", "A) To automatically convert data types", "B) To enhance the flexibility of operators for user-defined data types", "C) To create new operators in C++", "D) To restrict the use of certain operators", 'B');
+        questions[8] = question("9. Alice, which of the following operators cannot be overloaded?", "A) + (Addition)", "B) = (Assignment)", "C) ++ (Increment)", "D) :: (Scope resolution)", 'D');
+        questions[9] = question("10. Alice, which of the following statements about operator functions is true?", "A) Operator functions must have at least one operand of a user-defined type", "B) Operator functions must always be static", "C) Operator functions cannot be member functions", "D) All operator functions must return an integer", 'A');
+        questions[10] = question("11. Alice, what is multiple inheritance in C++?", "A) A derived class inheriting from only one base class", "B) A derived class inheriting from more than one base class", "C) A base class inheriting from a derived class", "D) A class containing objects of other classes", 'B');
+        questions[11] = question("12. Alice, what is hierarchical inheritance?", "A) A class being derived from another derived class", "B) A class inheriting from multiple base classes", "C) One base class being inherited by multiple derived classes", "D) A base class containing objects of another class", 'C');
+        questions[12] = question("13. Alice, what problem can occur in multipath inheritance, and how can it be avoided?", "A) The base class cannot be accessed; solved using friend functions", "B) The derived class cannot access private data; solved using protected members", "C) Duplication of inherited members; solved by making the common base class virtual", "D) Constructors execute in reverse order; solved by reordering the class declaration", 'C');
+        questions[13] = question("14. Alice, if a class is inherited privately in C++, how does it affect the access specifiers of the base class members in the derived class?", "A) Public and protected members of the base class become private in the derived class", "B) Public members remain public, protected members become private", "C) Protected members remain protected, public members become protected", "D) All members remain unchanged in the derived class", 'A');
+        questions[14] = question("15. Alice, what is an object pointer used for in C++?", "A) To create objects at runtime and access their public members", "B) To make a copy of an object", "C) To delete objects automatically when they are not needed", "D) To convert an object into a different data type", 'A');
+        questions[15] = question("16. Alice, which operator is used to access members of an object when using a pointer?", "A) Dot operator (.)", "B) Scope resolution operator (::)", "C) Arrow operator (->)", "D) Asterisk operator (*)", 'C');
+        questions[16] = question("17. Alice, what does the this pointer represent in C++?", "A) The base class of an object", "B)A pointer that always points to the first object in memory", "C) A pointer used for dynamic memory allocation", "D) A pointer that represents the object invoking a member function", 'D');
+        questions[17] = question("18. Alice, what does polymorphism mean in C++?", "A) One function can have only one name", "B) One name, multiple forms", "C) Functions cannot be overloaded", "D) Objects cannot be inherited", 'B');
+        questions[18] = question("19. Alice, what is another name for compile-time polymorphism?", "A) Early binding", "B) Late binding", "C) Dynamic linking", "D) Virtual function binding", 'A');
+        questions[19] = question("20. Alice, which type of polymorphism determines the function call during program execution?", "A) Compile-time polymorphism", "B) Static linking", "C) Function overloading", "D) Run-time polymorphism", 'D');
+    }
+    void ask() {
+        if (exit <= 0) {
+            cout << "Congratulations! Alice, you have escaped the maze!" << endl;
+            return;
+        }
+        if (counter >= 20) {
+            cout << "You have answered all the questions! You have escaped the maze!" << endl;
+            return;
+        }
+        char answer;
+        while (true) { 
+            cout << "Question: " << questions[counter].q << endl;
+            for (int j = 0; j < 4; j++) {
+                cout << questions[counter].opt[j] << endl;
+            }
+            cout << "Answer (A/B/C/D): ";
+            cin >> answer;
+            answer = toupper(answer);
+            
+            if (answer == questions[counter].correct) {
+                exit--; 
+                cout << "Correct! You move one step closer to the exit. Steps remaining: " << exit << "\n";
+                break; 
+            } else {
+                complexity++; 
+                cout << "Wrong answer! The maze becomes more complex. Complexity level: " << complexity << "\nTry again.\n";
+            }
+        }
+        counter++;
+    }
+    int getexit() {
+        return exit;
+    }
+};
+
+int main() {
+    maze alice;
+    cout << "You are trapped in the maze! Answer correctly to escape." << endl;
+    while (alice.getexit() > 0) {
+        alice.ask();
+    }
+    cout << "You have escaped the maze!" << endl;
+    return 0;
+}
