@@ -1,0 +1,176 @@
+#include <iostream>
+using namespace std;
+class rabbit_whole
+{
+    int counter=0;
+    public:
+    void display_theory()
+        {
+            counter++;
+            cout<<"\nObjective "<<counter<<"."<<endl<<endl;
+            switch (counter)
+            {
+                case 1:
+                        cout<<"In C++, single-line comments are written using //.Everything after // on that line is ignored by the compiler.They are useful for providing brief explanations about the code.\nEg:\n// This is a single-line commentint\nx = 10; // Initializing variable x\n";
+                    break;
+                case 2:
+                          cout<<"A function declaration, also known as a function prototype, informs the compiler about the function's name, return type, and parameters before its actual definition.This is important in cases where the function definition appears later in the program.\n";
+                    break;
+                case 3:
+                        cout<<"A local variable is declared inside a function and can only be accessed within that function.\nIt is created when the function starts and destroyed when the function ends.\nLocal variables cannot be accessed outside the function.\n";
+                    break;
+                case 4:
+                          cout<<"C++ has a strict type system than C, preventing unintended type conversions that could lead to errors.Type checking ensures variables and expressions follow proper data type rules.\n\nint x = 10.5; // Compiler gives a warning or error due to implicit conversion from double to int\n";
+                    break;
+                case 5:
+                          cout<<"A reference is an alias for an existing variable.\nIt must be initialized when declared and cannot be changed later.\nReferences are commonly used in function parameter passing to avoid copying large objects.\n\nEg:\nint a = 10;\nint &ref = a; // ref is another name for a\nref = 20; // Now, a is also 20\n";
+                    break;
+                case 6:
+                          cout<<"When a function receives a parameter by value, it gets a copy of the argument, meaning changes inside the function do not affect the original variable.\n";
+                    break;
+                case 7:
+                          cout<<"When a function receives a parameter by reference, it works with the original variable.Changes inside the function affect the original variable.\n";
+                    break;
+                case 8:
+                          cout<<"A default argument is a value assigned to a function parameter that is used when no argument is provided during the function call.Default arguments are specified in the function declaration.\n"<<endl;
+                    break;
+            }
+        }
+};
+class hall_of_knowledge
+{
+    int counter=0;
+    int check=0;
+    string Q[14];
+    char A[14];
+    char input;
+    public:
+    hall_of_knowledge()
+    {
+        //delete operator
+        Q[0]="Which of the following is true about the delete operator?\nA) It is used to allocate memory dynamically\nB) It deallocates memory and sets the pointer to NULL automatically\nC) It deallocates memory but does not reset the pointer\nD) It can be used only for arrays\n";
+        A[0]='C';
+        //comments
+        Q[1]="How are single-line comments written in C++?\nA) /* comment */\nB) # comment\nC) // comment\nD) ' comment";
+        A[1]='C';
+        //local variable
+        Q[2]="Which statement about local variables in C++ is correct?\nA) They are accessible throughout the entire program\nB) They are created when a function starts and destroyed when it ends\nC) They must be declared outside any function\nD) They can be accessed by all functions in the program";
+        A[2]='B';
+        //function overloading
+        Q[3]="cout << add(3.5, 2);\nWhich of the following overloaded function prototypes can handle this call?\nA) int add(int a, int b, int c);\nB) double add(double x, double y);\nC) double add(int p, double q);\nD) Compilation error\n";
+        A[3]='D';
+        //function overloading
+        Q[4]="What determines which overloaded function is called?\nA) The function's return type\nB) The number and type of arguments passed in the function call\nC) The order in which the functions are defined\nD) The functions access specifier (public, private, protected)\n";
+        A[4]='B';
+        //fn prototype
+        Q[5]="What is the purpose of a function prototype in C++?\nA) To define the function before its usage\nB) To declare the function before its actual definition\nC) To store the functions return value\nD) To execute the function automatically";
+        A[5]='B';
+        //new operator
+        Q[6]="What does the new operator do in C++?\nA) Declares a pointer variable\nB) Allocates memory dynamically and returns its address\nC) Initializes a pointer to NULL\nD) Frees dynamically allocated memory\n";
+        A[6]='B';
+        //new operator
+        Q[7]=" What happens if new fails to allocate memory?\nA) It returns NULL\nB) It throws a bad_alloc exception\nC) It terminates the program immediately\nD) The compiler generates a warning\n";
+        A[7]='B';
+        //reference
+        Q[8]="What happens when a function parameter is passed by reference?\nA) The function gets a copy of the argument\nB) The original variable remains unchanged\nC) Changes inside the function affect the original variable\nD) The function does not receive any argument";
+        A[8]='C';
+        //operators
+        Q[9]="What will be the output of the following code?\nint a = 5, b = 10;\ncout << (a > 2 && b < 20);\nA) 0\nB) 1\nC) true\nD) false\n";
+        A[9]='B';
+        //inline functuion
+        Q[10]=" Consider the following code snippet:\ninline int square(int x)\n{ return x * x; }\nint main()\n{\ncout << square(5 + 2);\n}\nWhat will be the output?\nA) 49\nB) 25\nC) Compilation error\nD) Undefined behavior\n";
+        A[10]='A';
+        //inline function
+        Q[11]="Which of the following statements is true about inline functions?\nA) Inline functions are always expanded at runtime\nB) Inline functions allow execution of multiple statements inside loops efficiently\nC) Inline functions execute faster because their address is precomputed\nD) Inline functions are expanded at compile time, reducing function call overhead\n";
+        A[11]='D';
+        //inline function
+        Q[12]="When should you avoid using inline functions?\nA) For very small functions\nB) For large, complex functions\nC) When reducing memory footprint is important\nD) Both B and C\n";
+        A[12]='D';
+        //default argument 
+        Q[13]="What is a default argument in C++?\nA) A value automatically assigned to a function parameter when no argument is passed\nB) The first argument in every function call\nC) A mandatory argument required in every function\nD) A parameter that can never be changed";
+        A[13]='A';
+    }
+    void open_door()
+    {
+        counter++;
+        display_theory();
+    }
+    void display_theory()
+        {
+        cout<<"\nDoor "<<counter<<" has been opened."<<endl<<endl;
+        switch (counter)
+        {
+            case 1:
+                cout<<"Overloading refers to the use of the same thing for different purposes.\nC++ also permits overloading of functions.\nThis means that we can use the same function name to create functions that perform a variety of different tasks.\nThis is known as function polymorphism in OOP.\nUsing the concept of function overloading; we can design a family of functions with one function name but with different argument lists.\nThe function would perform different operations depending on the argument list in the function call.\nThe correct function to be invoked is determined by checking the number and type of the arguments but not on the function type.\nFor example, an overloaded add() function handles different types of data as shown below:\nint add(int a, int b, int c);        // prototype 1\ndouble add(double x, double y);      // prototype 2\ndouble add(int p, double q);         // prototype 3\n\ncout << add(5, 10, 15);              // uses prototype 1\ncout << add(12.5, 7.5);              // uses prototype 2\ncout << add(15, 10.0);               // uses prototype 3\n";
+                break;
+            case 2:
+                cout<<"An object can be created by using new, and destroyed by using delete, as and when required. A data object created inside a block with new, will remain in existence until it is explicitly destroyed by using delete. Thus, the lifetime of an object is directly under our control and is unrelated to the block structure of the program.The new operator can be used to create objects of any type. It takes the following general form:\n\npointer-variable = new data-type;\n\nHere, pointer-variable is a pointer of type data-type. The new operator allocates sufficient memory to hold a data object of type data-type and returns the address of the object. The data-type may be any valid data type. The pointer-variable holds the address of the memory space allocated. Examples:\n\np = new int;\nq = new float;\n\nWhen a data object is no longer needed, it is destroyed to release the memory space for reuse. The general form of its use is:\n\ndelete pointer-variable;\n\nThe pointer-variable is the pointer that points to a data object created with new. Examples:\n\ndelete p;\ndelete q;\n";
+                break;
+            case 3:
+                cout<<"One of the objectives of using functions in a program is to save some memory space, which becomes appreciable when a function is likely to be called many times. However, every time a function is called, it takes a lot of extra time in executing a series of instructions for tasks such as jumping to the function, saving registers, pushing arguments into the stack, and returning to the calling function. When a function is small, a substantial percentage of execution time may be spent in such overheads.\nC++ has a different solution to this problem. To eliminate the cost of calls to small functions, C++ proposes a new feature called inline function. An inline function is a function that is expanded in line when it is invoked. That is, the compiler replaces the function call with the corresponding function code (something similar to macros expansion).\nIt is easy to make a function inline. All we need to do is to prefix the keyword inline to the function definition. All inline functions must be defined before they are called.\nEg:\n\n\tinline double cube(double a)\n\t{\n\treturn (a * a * a);\n\t}\n\tc = cube(3.0);\n\td = cube(2.5 + 1.5);\n\nThe speed benefits of inline functions diminish as the function grows in size. At some point, the overhead of the function call becomes small compared to the execution of the function, and the benefits of inline functions may be lost. In such cases, the use of normal functions will be more meaningful.\n";
+                break;
+            case 4:
+                cout<<"Operators are symbols that perform operations on variables and values.\nTypes of operators:\n\nArithmetic (+, -, *, /, %)\nRelational (==, !=, <, >, <=, >=)\nLogical (&&, ||, !)\nBitwise (&, |, ^, ~, <<, >>)\nAssignment (=, +=, -=, *=, /=, %=)\n";
+                break;
+            case 5:
+                cout<<"Type casting operator\n";
+                break;
+        }
+    }
+    void read()
+    {
+        cout<<"Answer (A/B/C/D): ";
+        cin>>input;
+        input=toupper(input);
+    }
+    int evaluate(int i)
+    {
+        counter++;
+        if (input == A[i]) // Direct character comparison
+        {
+            cout<<"Pass" << endl;
+            return 1;
+        }
+        else
+        {
+            cout<<"Fail" << endl;
+            return 0;
+        }
+    }
+    void question()
+    {
+        for (int i=0;i<14;i++)
+        {
+            cout<<"Question: "<<i+1 <<endl<<Q[i]<<endl;
+            do
+            {
+                read();
+                if (input!='A' && input!='B' && input!='C' && input!='D')
+                {
+                    cout <<"Invalid answer. Please choose A, B, C, or D."<<endl;
+                }
+            } while ((input!='A' && input!='B' && input!='C' && input!='D') || !evaluate(i));
+            cout<<endl;
+        }
+        cout<<"Your score is: "<<check<<"/6";
+    }
+};
+int main()
+{
+    rabbit_whole R;
+    hall_of_knowledge K;
+    cout<<"Alice followed the rabbit into the rabbit hole and tumbled into a seemingly endless fall. The air rushed past her as she spiraled downward, her surroundings shifting in eerie slow motion. Strange symbols and words flickered across the walls of the tunnel, glowing faintly as if whispering secrets only she could see."<<endl;
+    for (int i=0;i<8;i++)
+        {
+            R.display_theory();
+        }
+    cout<<"Hello Alice!!\nWelcome to the Hall Of Knowdledge."<<endl;
+    cout<<"To exit this level you must open all the doors and read and understand the Knowledge provieded behind each door. Then answer the Quiz provieded at the last door to exit."<<endl;
+    for (int i=0;i<5;i++)
+        {
+            K.open_door();
+        }
+    cout<<"The Quiz begins.\n All The Best!!"<<endl;
+    K.question();
+    return 0;
+}
