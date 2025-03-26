@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-class rabbit_whole
+class rabbit_hole
 {
     int counter=0;
     public:
