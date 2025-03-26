@@ -1,14 +1,19 @@
 #include <iostream>
 using namespace std;
-class rabbit_hole
+class hall_of_knowledge
 {
     int counter=0;
+    int count=0;
+    int check=0;
+    string Q[14];
+    char A[14];
+    char input;
     public:
-    void display_theory()
+    void rabbit_hole()
         {
-            counter++;
-            cout<<"\nObjective "<<counter<<"."<<endl<<endl;
-            switch (counter)
+            count++;
+            cout<<"\nObjective "<<count<<"."<<endl<<endl;
+            switch (count)
             {
                 case 1:
                         cout<<"In C++, single-line comments are written using //.Everything after // on that line is ignored by the compiler.They are useful for providing brief explanations about the code.\nEg:\n// This is a single-line commentint\nx = 10; // Initializing variable x\n";
@@ -36,15 +41,6 @@ class rabbit_hole
                     break;
             }
         }
-};
-class hall_of_knowledge
-{
-    int counter=0;
-    int check=0;
-    string Q[14];
-    char A[14];
-    char input;
-    public:
     hall_of_knowledge()
     {
         //delete operator
@@ -157,12 +153,12 @@ class hall_of_knowledge
 };
 int main()
 {
-    rabbit_whole R;
+    hall_of_knowledge R;
     hall_of_knowledge K;
     cout<<"Alice followed the rabbit into the rabbit hole and tumbled into a seemingly endless fall. The air rushed past her as she spiraled downward, her surroundings shifting in eerie slow motion. Strange symbols and words flickered across the walls of the tunnel, glowing faintly as if whispering secrets only she could see."<<endl;
     for (int i=0;i<8;i++)
         {
-            R.display_theory();
+            R.rabbit_hole();
         }
     cout<<"Hello Alice!!\nWelcome to the Hall Of Knowdledge."<<endl;
     cout<<"To exit this level you must open all the doors and read and understand the Knowledge provieded behind each door. Then answer the Quiz provieded at the last door to exit."<<endl;
