@@ -1,5 +1,158 @@
+//hall_of_knowledge
 #include <iostream>
 using namespace std;
+class hall_of_knowledge
+{
+    int counter=0;
+    int count=0;
+    int check=0;
+    string Q[14];
+    char A[14];
+    char input;
+    public:
+    void rabbit_hole()
+        {
+            count++;
+            cout<<"\nObjective "<<count<<"."<<endl<<endl;
+            switch (count)
+            {
+                case 1:
+                        cout<<"In C++, single-line comments are written using //.Everything after // on that line is ignored by the compiler.They are useful for providing brief explanations about the code.\nEg:\n// This is a single-line commentint\nx = 10; // Initializing variable x\n";
+                    break;
+                case 2:
+                          cout<<"A function declaration, also known as a function prototype, informs the compiler about the function's name, return type, and parameters before its actual definition.This is important in cases where the function definition appears later in the program.\n";
+                    break;
+                case 3:
+                        cout<<"A local variable is declared inside a function and can only be accessed within that function.\nIt is created when the function starts and destroyed when the function ends.\nLocal variables cannot be accessed outside the function.\n";
+                    break;
+                case 4:
+                          cout<<"C++ has a strict type system than C, preventing unintended type conversions that could lead to errors.Type checking ensures variables and expressions follow proper data type rules.\n\nint x = 10.5; // Compiler gives a warning or error due to implicit conversion from double to int\n";
+                    break;
+                case 5:
+                          cout<<"A reference is an alias for an existing variable.\nIt must be initialized when declared and cannot be changed later.\nReferences are commonly used in function parameter passing to avoid copying large objects.\n\nEg:\nint a = 10;\nint &ref = a; // ref is another name for a\nref = 20; // Now, a is also 20\n";
+                    break;
+                case 6:
+                          cout<<"When a function receives a parameter by value, it gets a copy of the argument, meaning changes inside the function do not affect the original variable.\n";
+                    break;
+                case 7:
+                          cout<<"When a function receives a parameter by reference, it works with the original variable.Changes inside the function affect the original variable.\n";
+                    break;
+                case 8:
+                          cout<<"A default argument is a value assigned to a function parameter that is used when no argument is provided during the function call.Default arguments are specified in the function declaration.\n"<<endl;
+                    break;
+            }
+        }
+    hall_of_knowledge()
+    {
+        //delete operator
+        Q[0]="Which of the following is true about the delete operator?\nA) It is used to allocate memory dynamically\nB) It deallocates memory and sets the pointer to NULL automatically\nC) It deallocates memory but does not reset the pointer\nD) It can be used only for arrays\n";
+        A[0]='C';
+        //comments
+        Q[1]="How are single-line comments written in C++?\nA) /* comment */\nB) # comment\nC) // comment\nD) ' comment";
+        A[1]='C';
+        //local variable
+        Q[2]="Which statement about local variables in C++ is correct?\nA) They are accessible throughout the entire program\nB) They are created when a function starts and destroyed when it ends\nC) They must be declared outside any function\nD) They can be accessed by all functions in the program";
+        A[2]='B';
+        //function overloading
+        Q[3]="cout << add(3.5, 2);\nWhich of the following overloaded function prototypes can handle this call?\nA) int add(int a, int b, int c);\nB) double add(double x, double y);\nC) double add(int p, double q);\nD) Compilation error\n";
+        A[3]='D';
+        //function overloading
+        Q[4]="What determines which overloaded function is called?\nA) The function's return type\nB) The number and type of arguments passed in the function call\nC) The order in which the functions are defined\nD) The functions access specifier (public, private, protected)\n";
+        A[4]='B';
+        //fn prototype
+        Q[5]="What is the purpose of a function prototype in C++?\nA) To define the function before its usage\nB) To declare the function before its actual definition\nC) To store the functions return value\nD) To execute the function automatically";
+        A[5]='B';
+        //new operator
+        Q[6]="What does the new operator do in C++?\nA) Declares a pointer variable\nB) Allocates memory dynamically and returns its address\nC) Initializes a pointer to NULL\nD) Frees dynamically allocated memory\n";
+        A[6]='B';
+        //new operator
+        Q[7]=" What happens if new fails to allocate memory?\nA) It returns NULL\nB) It throws a bad_alloc exception\nC) It terminates the program immediately\nD) The compiler generates a warning\n";
+        A[7]='B';
+        //reference
+        Q[8]="What happens when a function parameter is passed by reference?\nA) The function gets a copy of the argument\nB) The original variable remains unchanged\nC) Changes inside the function affect the original variable\nD) The function does not receive any argument";
+        A[8]='C';
+        //operators
+        Q[9]="What will be the output of the following code?\nint a = 5, b = 10;\ncout << (a > 2 && b < 20);\nA) 0\nB) 1\nC) true\nD) false\n";
+        A[9]='B';
+        //inline functuion
+        Q[10]=" Consider the following code snippet:\ninline int square(int x)\n{ return x * x; }\nint main()\n{\ncout << square(5 + 2);\n}\nWhat will be the output?\nA) 49\nB) 25\nC) Compilation error\nD) Undefined behavior\n";
+        A[10]='A';
+        //inline function
+        Q[11]="Which of the following statements is true about inline functions?\nA) Inline functions are always expanded at runtime\nB) Inline functions allow execution of multiple statements inside loops efficiently\nC) Inline functions execute faster because their address is precomputed\nD) Inline functions are expanded at compile time, reducing function call overhead\n";
+        A[11]='D';
+        //inline function
+        Q[12]="When should you avoid using inline functions?\nA) For very small functions\nB) For large, complex functions\nC) When reducing memory footprint is important\nD) Both B and C\n";
+        A[12]='D';
+        //default argument 
+        Q[13]="What is a default argument in C++?\nA) A value automatically assigned to a function parameter when no argument is passed\nB) The first argument in every function call\nC) A mandatory argument required in every function\nD) A parameter that can never be changed";
+        A[13]='A';
+    }
+    void open_door()
+    {
+        counter++;
+        display_theory();
+    }
+    void display_theory()
+        {
+        cout<<"\nDoor "<<counter<<" has been opened."<<endl<<endl;
+        switch (counter)
+        {
+            case 1:
+                cout<<"Overloading refers to the use of the same thing for different purposes.\nC++ also permits overloading of functions.\nThis means that we can use the same function name to create functions that perform a variety of different tasks.\nThis is known as function polymorphism in OOP.\nUsing the concept of function overloading; we can design a family of functions with one function name but with different argument lists.\nThe function would perform different operations depending on the argument list in the function call.\nThe correct function to be invoked is determined by checking the number and type of the arguments but not on the function type.\nFor example, an overloaded add() function handles different types of data as shown below:\nint add(int a, int b, int c);        // prototype 1\ndouble add(double x, double y);      // prototype 2\ndouble add(int p, double q);         // prototype 3\n\ncout << add(5, 10, 15);              // uses prototype 1\ncout << add(12.5, 7.5);              // uses prototype 2\ncout << add(15, 10.0);               // uses prototype 3\n";
+                break;
+            case 2:
+                cout<<"An object can be created by using new, and destroyed by using delete, as and when required. A data object created inside a block with new, will remain in existence until it is explicitly destroyed by using delete. Thus, the lifetime of an object is directly under our control and is unrelated to the block structure of the program.The new operator can be used to create objects of any type. It takes the following general form:\n\npointer-variable = new data-type;\n\nHere, pointer-variable is a pointer of type data-type. The new operator allocates sufficient memory to hold a data object of type data-type and returns the address of the object. The data-type may be any valid data type. The pointer-variable holds the address of the memory space allocated. Examples:\n\np = new int;\nq = new float;\n\nWhen a data object is no longer needed, it is destroyed to release the memory space for reuse. The general form of its use is:\n\ndelete pointer-variable;\n\nThe pointer-variable is the pointer that points to a data object created with new. Examples:\n\ndelete p;\ndelete q;\n";
+                break;
+            case 3:
+                cout<<"One of the objectives of using functions in a program is to save some memory space, which becomes appreciable when a function is likely to be called many times. However, every time a function is called, it takes a lot of extra time in executing a series of instructions for tasks such as jumping to the function, saving registers, pushing arguments into the stack, and returning to the calling function. When a function is small, a substantial percentage of execution time may be spent in such overheads.\nC++ has a different solution to this problem. To eliminate the cost of calls to small functions, C++ proposes a new feature called inline function. An inline function is a function that is expanded in line when it is invoked. That is, the compiler replaces the function call with the corresponding function code (something similar to macros expansion).\nIt is easy to make a function inline. All we need to do is to prefix the keyword inline to the function definition. All inline functions must be defined before they are called.\nEg:\n\n\tinline double cube(double a)\n\t{\n\treturn (a * a * a);\n\t}\n\tc = cube(3.0);\n\td = cube(2.5 + 1.5);\n\nThe speed benefits of inline functions diminish as the function grows in size. At some point, the overhead of the function call becomes small compared to the execution of the function, and the benefits of inline functions may be lost. In such cases, the use of normal functions will be more meaningful.\n";
+                break;
+            case 4:
+                cout<<"Operators are symbols that perform operations on variables and values.\nTypes of operators:\n\nArithmetic (+, -, *, /, %)\nRelational (==, !=, <, >, <=, >=)\nLogical (&&, ||, !)\nBitwise (&, |, ^, ~, <<, >>)\nAssignment (=, +=, -=, *=, /=, %=)\n";
+                break;
+            case 5:
+                cout<<"Type casting operator\n";
+                break;
+        }
+    }
+    void read()
+    {
+        cout<<"Answer (A/B/C/D): ";
+        cin>>input;
+        input=toupper(input);
+    }
+    int evaluate(int i)
+    {
+        counter++;
+        if (input == A[i]) // Direct character comparison
+        {
+            cout<<"Pass" << endl;
+            return 1;
+        }
+        else
+        {
+            cout<<"Fail" << endl;
+            return 0;
+        }
+    }
+    void question()
+    {
+        for (int i=0;i<14;i++)
+        {
+            cout<<"Question: "<<i+1 <<endl<<Q[i]<<endl;
+            do
+            {
+                read();
+                if (input!='A' && input!='B' && input!='C' && input!='D')
+                {
+                    cout <<"Invalid answer. Please choose A, B, C, or D."<<endl;
+                }
+            } while ((input!='A' && input!='B' && input!='C' && input!='D') || !evaluate(i));
+            cout<<endl;
+        }
+        cout<<"Your score is: "<<check<<"/6";
+    }
+};
+//animal class
 class Animal 
 {
 public:
@@ -105,6 +258,7 @@ void speaks(Animal &a, int &ind)
     a.speak(ind);
     ind++;
 }
+//maze class
 class maze {
 private:
     int complexity;
@@ -150,19 +304,16 @@ public:
         questions[19] = question("20. Alice, which type of polymorphism determines the function call during program execution?", "A) Compile-time polymorphism", "B) Static linking", "C) Function overloading", "D) Run-time polymorphism", 'D');
     }
     void ask() {
-        if (exit <= 0) 
-        {
+        if (exit <= 0) {
             cout << "Congratulations! Alice, you have escaped the maze!" << endl;
             return;
         }
-        if (counter >= 20) 
-        {
+        if (counter >= 20) {
             cout << "You have answered all the questions! You have escaped the maze!" << endl;
             return;
         }
         char answer;
-        while (true) 
-        { 
+        while (true) { 
             cout << "Question: " << questions[counter].q << endl;
             for (int j = 0; j < 4; j++) {
                 cout << questions[counter].opt[j] << endl;
@@ -171,14 +322,11 @@ public:
             cin >> answer;
             answer = toupper(answer);
             
-            if (answer == questions[counter].correct) 
-            {
+            if (answer == questions[counter].correct) {
                 exit--; 
                 cout << "Correct! You move one step closer to the exit. Steps remaining: " << exit << "\n";
                 break; 
-            } 
-            else 
-            {
+            } else {
                 complexity++; 
                 cout << "Wrong answer! The maze becomes more complex. Complexity level: " << complexity << "\nTry again.\n";
             }
@@ -189,13 +337,137 @@ public:
         return exit;
     }
 };
-int main() 
+//madhatter
+class madhatter
 {
-    Owl o;
-    Fish f;
-    Cat c;
-    Mole m;
-    Turtle t;
+    string que[17];
+    char ans[17];
+    char input;
+    int check=0;
+    public:
+    madhatter ()
+    {
+        que[0]="#include <iostream.h>\nvoid main()\n{\n short i = 2500, j = 3000;\ncout >> \"i + j = \" >> -(i + j);\n}\nWhat are the errors in this code?\nA) #include <iostream.h> should be #include <iostream>\nB) void main() should be int main()\nC) cout >> should be cout <<\nD) All of the above\n";
+        ans[0]='D';
+        que[1]= "#include <iostream>\nint main()\n{\nint i = 5;\nwhile (i)\n{\n\tswitch (i)\n\t{\n\tdefault:\n\tcase 4:\n\tcase 5:\n\tbreak;\n\tcase 1:\n\tcontinue;\n\tcase 2:\n\tcase 3:\n\tbreak;\n\t}\n--;\n}\n}\nA) The continue; statement inside switch is invalid\nB) switch cannot be inside a while loop\nC) The program will cause an infinite loop\nD) #include <iostream> should be #include <iostream.h>\n";
+        ans[1]='A';
+        que[2]= "#include <iostream.h>\nvoid main()\n{\nint i = 10, j = 5;\nint modResult = 0;\nint divResult = 0;\nmodResult = i % j;\ncout << modResult << " ";\ndivResult = i / modResult;\ncout << divResult;\n}\nWhat will happen when this code is executed?\nA) It will compile and run successfully, outputting 0 and 10.\nB) It will cause a runtime error due to division by zero.\nC) #include <iostream.h> should be replaced with #include <iostream>.\nD) Both B and C.\n";
+        ans[2]='D';
+        que[3]= "#include <iostream>\n#define pi 3.14\nint squareArea(int &);\nint circleArea(int &);\nint main()\n{\nint a = 10;\nstd::cout << squareArea(a) << " ";\nstd::cout << circleArea(a) << " ";\nstd::cout << a << std::endl;\nreturn 0;\n}\nint squareArea(int &a)\n{\nreturn a *= a;\n}\nint circleArea(int &r)\n{\nreturn r = pi * r * r;\n}\nA) pi is defined as #define pi 3.14, which causes implicit type conversion to int\nB) The squareArea function modifies a, which may cause unintended behavior\nC) return a *= a; is invalid syntax\nD) cout << should be cout >>\n";
+        ans[3]='A';
+        que[4]="#include <iostream>\nvoid display(const int const1 = 5)\n{\nconst int const2 = 5;\nint array1[const1];\nint array2[const2];\nfor (int i = 0; i < 5; i++)\n{\narray1[i] = i;\narray2[i] = 10;\nstd::cout << array1[i] << " " << array2[i] << " ";\n}\n}\nint main()\n{\ndisplay(5);\nreturn 0;\n}\nA) const int const1 = 5; inside display is invalid because default parameters cannot be constant\nB) Variable-length arrays (array1[const1]) are not allowed in standard C++\nC) std::cout should be cout without std::\nD) The display(5); function call is incorrect\n";
+        ans[4]='B';
+        que[5]="#include <iostream>\nint gValue = 10;\nvoid extra()\n{\nstd::cout << gValue << " ";\n}\nint main()\n{\nextra();\n{\nint gValue = 20;\nstd::cout << gValue << " ";\nstd::cout << ::gValue << " ";\n}\nreturn 0;\n}\nA) ::gValue cannot be accessed inside a nested block\nB) The program does not compile because gValue is redefined in a nested block\nC) The extra() function should take gValue as a parameter instead of using the global variable\nD) There is no error; the program will execute successfully\n";
+        ans[5]='A';
+        que[6]="#include <iostream>\nint fun()\n{\nreturn 1;\n}\nfloat fun()\n{\nreturn 10.23;\n}\nint main()\n{\nstd::cout << (int)fun() << ' ';\nstd::cout << (float)fun() << ' ';\nreturn 0;\n}\nA)The program should use printf() instead of cout\nB) The typecasting of fun() is incorrect\nC)Function overloading cannot be done with only return type differences\nD) The main() function should not return 0\n";
+        ans[6]='C';
+        que[7]="#include <iostream>\nclass Room;\nvoid Area()\n{\nint width, height;\nclass Room\n{\nint width, height;\npublic:\nvoid setValue(int w, int h)\n{\nwidth = w;\nheight = h;\n}\nvoid displayValues()\n{\nstd::cout << (float)width << ' ' << (float)height;\n}\n};\nRoom objRoom1;\nobjRoom1.setValue(12, 8);\nobjRoom1.displayValues();\n}\nint main()\n{\nArea();\nRoom objRoom2;\nreturn 0;\n}\nA) The class Room is defined inside Area(), making it inaccessible in main()\nB) cout should be replaced with printf() for float formatting\nC) The program is missing a using namespace std; statement\nD) The class Room should be declared as static inside Area()";
+        ans[7]='A';
+        que[8]="#include <iostream>\nclass Room;\nvoid Area()\n{\nint width, height;\nclass Room\n{\nint width, height;\npublic:\nvoid setValue(int w, int h)\n{\nwidth = w;\nheight = h;\n}\nvoid displayValues()\n{\nstd::cout << (float)width << ' ' << (float)height;\n}\n};\nRoom objRoom1;\nobjRoom1.setValue(12, 8);\nobjRoom1.displayValues();\n}\nint main()\n{\nArea();\nRoom objRoom2;\nreturn 0;\n}\nA)cout should be replaced with printf() for performance reasons\nB) The static variable count should be initialized inside the constructor\nC) displayCount() should be declared as static\nD)setCount() is a static function and should not take any parameters";
+        ans[8]='D';
+        que[9]="#include <iostream>\n\nclass Room\n{\n    int width;\nint height;\nstatic int copyConsCount;\n\npublic:\nRoom()\n{\nwidth = 12;\nheight = 8;\n}\n\nRoom(const Room& r)\n{\nwidth = r.width;\nheight = r.height;\n copyConsCount++;\n}\n\nvoid dispCopyConsCount()\n{\nstd::cout << copyConsCount;\n}\n};\n\nint Room::copyConsCount = 0;\n\nint main()\n{\n    Room objRoom1;\nRoom objRoom2(objRoom1);\nRoom objRoom3 = objRoom1;\nRoom objRoom4;\nobjRoom4 = objRoom3;\n\nobjRoom1.dispCopyConsCount();\n return 0;\n}\nA) The copy constructor is incorrectly declared and should not be const\nB) The assignment objRoom4 = objRoom3; does not invoke the copy constructor\nC) The static variable copyConsCount should be initialized inside the constructor\nD) dispCopyConsCount() should be declared as static";
+        ans[9]='B';
+        que[10]="#include<iostream>\nclass Room\n{\nint length;\nint width;\npublic:\nRoom(int l,int w=0):width(w),length(l)\n{\n}\n};\nint main()\n{\nRoom objRoom1;\nRoom objRoom2(12,8);\nreturn 0;\n}\nA) The class Room is missing a default constructor\nB) The order of initialization in Room(int l, int w = 0) : width(w), length(l) is incorrect\nC) width should not have a default value\nD) The constructor should be defined outside the class";
+        ans[10]='A';
+        que[11]="#include<iostream>\nclass Space\n{\nint mCount;\npublic:\nSpace():mCount(0){}\nSpace(int count):mCount(count){}\nSpace operator++()\n{\nmCount++;\nreturn Space(mCount);\n}\n};\nint main()\n{\nSpace objSpace;\nobjSpace++;\nreturn 0;\n}\nA) The class Space is missing a constructor that takes an integer\nB) The operator++() function should return a reference instead of an object\nC) The code is missing an overload for the post-increment operator (operator++(int))\nD) mCount should be a static variable";
+        ans[11]='C';
+        que[12]="#include<iostream>\nclass Room\n{\nfloat mWidth;\nfloat mLength;\npublic:\nRoom():mWidth(0),mLength(0){}\nRoom(float w,float h):mWidth(w),mLength(h){}\noperator float()\n{\nreturn mWidth*mLength;\n}\nfloat getWidth(){return mWidth;}\nfloat getLength(){return mLength;}\n};\nint main()\n{\nRoom objRoom(2.5,2.5);\nfloat fTotalArea;\nfTotalArea=objRoom;\ncout<<fTotalArea;\nreturn 0;\n}\nA) The class Room should not have an implicit conversion operator\nB) The default constructor should initialize member variables\nC) cout is undefined because std:: is missing\nD) The operator float() should return an integer value";
+        ans[12]='C';
+        que[13]="#include<iostream>\nclass A\n{\nint i;\n};\nclass AB:virtual public A\n{\nint j;\n};\nclass ABAC;\nclass AC:public A,public AB\n{\nint k;\n};\nclass ABAC:public AB,public AC\n{\nint l;\n};\nint main()\n{\nABAC abac;\nstd::cout<<\"sizeof ABAC:\"<<sizeof(abac);\nreturn 0;\n}\nA) The class ABAC is used before being defined\nB) The class A should have a virtual destructor\nC) Multiple inheritance is not allowed in C++\nD) The sizeof(abac) statement is incorrect";
+        ans[13]='A';
+        que[14]="#include<iostream>\nclass B1\n{\nint b1=10;\npublic:\nvoid display()\n{\nstd::cout<<b1<<\"\\n\";\n}\n};\nclass B2\n{\nint b2=20;\npublic:\nvoid display()\n{\nstd::cout<<b2<<\"\\n\";\n}\n};\nclass D:public B1,public B2\n{\n};\nint main()\n{\nD d;\nd.B1::display();\nd.B2::display();\nreturn 0;\n}\nA) The function display() in class D should be explicitly defined\nB) The call d.display(); is ambiguous due to multiple inheritance\nC) The base classes should be declared as virtual to avoid ambiguity\nD) The class D must explicitly call base class constructors";
+        ans[14]='B';
+        que[15]="#include<iostream>\nclass Person\n{\nint age;\npublic:\nPerson():age(0){}\nPerson(int age)\n{\nthis.age=age;\n}\nPerson& operator<(Person& p)\n{\nreturn age<p.age?p:*this;\n}\nint getAge()\n{\nreturn age;\n}\n};\nint main()\n{\nPerson p1(15);\nPerson p2(11);\nPerson p3;\np3=p1<p2;\nstd::cout<<p3.getAge();\nreturn 0;\n}\nA) this is not a normal variable and should use this->age instead of this.age\nB) The < operator must return a boolean value (true or false)\nC) The operator< should be declared const\nD) The default constructor must explicitly initialize age";
+        ans[15]='A';
+        que[16]="#include<iostream>\nusing namespace std;\nclass Base\n{\npublic:\nvirtual void show()=0;\n};\nclass Derived: public Base\n{\npublic:\nvoid show()\n{\ncout<<\"Derived class show()\"<<\"\\n\";\n}\n};\nint main()\n{\nDerived d;\nd.show();\nreturn 0;\n}\nA) The program will not compile as Base has a pure virtual function\nB) The program will give a linker error due to an unresolved reference\nC) The program will compile and run, displaying \"Derived class show()\"\nD) The function show() in Derived must be explicitly marked as override";
+       ans[16]='C';
+
+    }
+    void read()
+    {
+        cout<<"Answer (A/B/C/D): ";
+        cin>>input;
+        input=toupper(input);
+    }
+    bool evaluate(int i)
+    {
+        check++;
+            if (input==ans[i])
+            {
+                cout<<"Pass"<<endl;
+                return true;
+            }
+            else
+            {
+                string sass[] =
+                {
+                    "Oh honey, that was a bold choice, but still wrong. Try again! Perhaps with a bit more sanity?",
+                    "Are you trying to make the compiler cry, or are we simply embracing the chaos today?",
+                    "Even the Mad Hatter is confused by that answer—and trust me, thats an achievement!",
+                    "Are you sure about that? Or are you just playing a very risky game of make-believe?",
+                    "That answer was so wrong, even the Cheshire Cat disappeared out of embarrassment.",
+                    "Oops! That answer belongs in the Queen of Hearts dungeon—off with its head!",
+                    "404: Correct answer not found. But do check Wonderlands lost-and-found!",
+                    "That was… a fascinating work of fiction. But no, try again!",
+                    "If answers were tea, yours would have just spilled all over the table.",
+                    "Oh, dear! That answer just fell down the rabbit hole—never to be seen again!",
+                    "You must be late for a very important fact-checking session, because that was NOT it!",
+                    "That answer is curiouser and curiouser… yet somehow still terribly wrong!",
+                    "I admire the confidence! The accuracy? Not even the White Rabbit could find it.",
+                    "If wrong answers earned XP, youd be the Mad Hatters grandmaster of nonsense by now!",
+                    "Your logic just took a detour… straight into Wonderlands most puzzling paradox.",
+                    "Id say close, but then Id be stretching reality thinner than the March Hares patience."
+                };
+                cout<<sass[i]<<endl;
+                return false;
+            }
+    }
+    void challenge()
+    {
+        for (int i=0;i<17;i++)
+        {
+            cout<<"Question: "<<i+1 <<endl<<que[i]<<endl;
+            do
+            {
+                read();
+                if (input!='A' && input!='B' && input!='C' && input!='D')
+                {
+                    cout <<"Invalid answer. Please choose A, B, C, or D."<<endl;
+                }
+            } while ((input!='A' && input!='B' && input!='C' && input!='D') || !evaluate(i));
+            cout<<endl;
+        }
+        cout<<"Your score is: "<<check<<"/16";
+    }
+};
+class Alice: public hall_of_knowledge , public animal , public maze , public madhatter
+{
+    
+};
+int main()
+{
+//hall of knowledge stuff
+    Alice R;
+    Alice K;
+    cout<<"Alice followed the rabbit into the rabbit hole and tumbled into a seemingly endless fall. The air rushed past her as she spiraled downward, her surroundings shifting in eerie slow motion. Strange symbols and words flickered across the walls of the tunnel, glowing faintly as if whispering secrets only she could see."<<endl;
+    for (int i=0;i<8;i++)
+        {
+            R.rabbit_hole();
+        }
+    cout<<"Hello Alice!!\nWelcome to the Hall Of Knowdledge."<<endl;
+    cout<<"To exit this level you must open all the doors and read and understand the Knowledge provieded behind each door. Then answer the Quiz provieded at the last door to exit."<<endl;
+    for (int i=0;i<5;i++)
+        {
+            K.open_door();
+        }
+    cout<<"The Quiz begins.\n All The Best!!"<<endl;
+    K.question();
+//animal
+    Alice o;
+    Alice f;
+    Alice c;
+    Alice m;
+    Alice t;
 
     int oind = 0, find = 0, cind = 0, mind = 0, tind = 0;
     
@@ -223,11 +495,18 @@ int main()
                 break;}
         }
     }
-    maze alice;
-    cout << "\n\n\n The animals quickly leave Alice's side as she approaches the island. She was so caught up with their talking, she forgot about the White Rabbit! Nonetheless, as she ties the boat to shore, she tries to recall everything the animals taught her. After all, they did warn her about a maze. She wonders what it was all about. Just as Alice begins to walk onto the island, she spots the Rabbit again! She breaks into a sprint, chasing behind the Rabbit. But as always, the Rabbit was too quick for her. She chased him through the highs and lows of the jungle until she managed to reach a maze. She tried to follow the Rabbit in, but she quickly lost sight of him. Alice suddenly remembers the warning of the animals....This was the maze they were talking about! With newfound determination, Alice steps forward. She was going to make her way out of this\n\n." << endl;
+// maze
+    Alice alice;
+    cout << "You are trapped in the maze! Answer correctly to escape." << endl;
     while (alice.getexit() > 0) {
         alice.ask();
     }
     cout << "You have escaped the maze!" << endl;
     return 0;
+//madhatter stuff
+    Alice M;
+    cout << "\"Hello and Welcome to the tea bugging party!!\" says The Madhatter." << endl;
+    cout<<"To drink the tea, debug the question provided to you when you pour in the tea."<<endl;
+    cout << "From the other end of the table, rabbits say to Alice that, \"each wrong answer while debugging would lead to the Madhatter scolding her.\"" << endl;
+    M.challenge();
 }
