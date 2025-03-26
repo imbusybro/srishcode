@@ -1,3 +1,151 @@
+//animal class
+#include <iostream>
+using namespace std;
+class Animal 
+{
+public:
+    virtual void speak(int ind) 
+    { 
+        cout << "Alice hears a sound..." << endl; 
+    }
+};
+// Owl Class
+class Owl : public Animal 
+{
+public:
+    void speak(int ind) override
+    {
+        string msg[] = {
+            "Owl: 'You know my dear Alice, the scope of a variable extends from the point of its declaration till the end of the block containing the declaration. A variable declared inside a block is said to be local to that block.You should remember that a declaration of the same variable in an outer block, and therefore, each declaration of a variable causes it to refer to a different data object.'", 
+            "Owl: 'C++ allows the common functions to be made friendly with both the classes, thereby allowing the function to have access to the private data of these classes. Such a function need not be a member of any of these classes. Also, the function declaration should be preceded by the keyword 'friend'.\nFish: 'A friend function has special characteristics:\n1] It is not in scope of the class to ehich it has been declared as friend\n2] Since it is not in the scope of the class, it cannot be called using the object of that class.\n3] It can be invoked like a normal function without the help of any object.\n4] Unlike member functions, it cannot access the member names directly and has to use an object name and dot membership operator with each member name.\n5] It can be declared either in the public or the private part of a class without affecting its meaning.\n6] Usually, it has the objects as arguments.'\nCat: 'You can declare all the member functions of one class as the friend functions of another class. In such cases, the class is called a friend class.'\n\n Owl: 'Although it is normal practice to place all the data items in a private section and all the functions in public, some situations may require certain functions to be hidden from outside calls.'", 
+            "Owl: 'The deferencing operator ->* is used to access a member when we use pointers to both the objects and the member. The deferencing operator is used when the object itself is used with the member pointer.\n\n'",
+            "Owl: 'Operator overloading is done with the help of a special function, called operator function, which describes the special task to an operator. There are certain restrictions and limitations in overloading operators.'",
+            "Owl: 'The derived class inherits some or all of the properties of the base class. A derived class with only one base class is called single inheritance. A class can inherit properties from more than one class which is known as multiple inheritance.'",
+            "Owl: 'In multiple inheritance, the base classes are constructed in the order in which they appear in the declaration of the derived class. In multilevel inheritance, the constructors are executed in the order of inheritance. A class can contain objects of other classes. This is known as containership or nesting.\n\n'",
+             "Owl: 'That means, there is no ambiguity at the compile time about which a function is to be linked to a particular function's call. This mechanism is called early binding or static binding or static linking  Compile time polymorphism is achieved in two ways: function overloading and operator overloading.'"
+        };
+        cout << msg[ind % 7] << endl;
+    }
+};
+// Fish Class
+class Fish : public Animal 
+{
+public:
+    void speak(int ind) override
+    { 
+        string msg[] = {
+            "Fish: 'Yeah Alice! C++ resolves this problem by introducing a new operator :: called the scope resolution operator. This operator allows access to the global version of a variable.\n\n'", 
+            "Fish: 'We can place these functions in the private section. A private function can only be called by another function that is a member of its class. Even an object cannot invoke a private function using dot operator.'", 
+            "Fish: 'C++ provides a special member function called the constructor which enables an object to initialize itself when it is created. This is known as automatic initialization of objects. A constructor has the same name as that of the class. It is normally used to initialize variables and to allocate memory. They can also be overloaded.'", 
+            "Fish: 'Operator functions must either be member functions (nonstatic) or friend functions. The overloading operator must have at least one operand that is of user defined type.'",
+            "Fish: 'A class can be derived from another derived class which is known as multilevel inheritance. When the properties of one class are inherited by more than one class, it is called hierarchical inheritance.'",
+            "Fish: 'A pointer can point to an object created by a class. Object pointers are useful in creating objects at run time. You can also use an object pointer to access the public members of an object. You can refer to the member functions in two ways, one by using the dot operator and the object and another using the arrow operator and the object pointer.'",
+            "Fish: 'Run time polymorphism defers the linking of a function call to a particular class much later, that is, at run time. Thus, it is not known which function will be invoked till an object actually makes the function call during the program's execution. This process is referred as late or dynamic binding.\n\n"
+        };
+        cout << msg[ind % 7] << endl;
+    }
+};
+// Cat Class
+class Cat : public Animal 
+{
+public:
+    void speak(int ind) override
+    { 
+        string msg[] = {
+            "Cat: 'Also! member functions can be defined in two places: outside the class definition or inside the class definition. An important difference between a member functionand a ormal function is that a member function incorporates a membership 'identity label' in the header. This 'label' tells the compiler which class the function belongs to.'", 
+            "Cat: 'Public data is accessible from anywhere -  inside the class, in derived (child) classes, and outside the class. It is often used for functions that provide an interface to interact with private or protected data.'", 
+            "Cat: 'When an object is created and initialized at the same time, a copy constructor gets called. We may make an object const if it does not modify any of  its data values. C++ also provides another member function called the destructor that destroys the objects when they are no longer required.\n\n", 
+            "Cat: 'The compiler does not support automatic type conversions for the user defined data types. We can use casting operator functions to achieve this.'",
+            "Cat: 'A private member of a class cannot be inherited either in public mode or private mode. A protected member inherited in public mode becomes protected, whereas inherited in private mode becomes private in the derived class.'",
+            "Cat: 'Oh yes!\nx.getdata(100,75);\nx.show;\nis equivalent to\nptr->getdata(100,75);\nptr->show();\nYou can also create objects using pointers and new operator like so:\nitem *ptr=new item;\nThis statement allocates enough memory for the data members in the object structure and assigns the operator of the memory space to ptr.\n'",
+            "Cat: 'I hope this talk with us was rewarding for you dearie!'"
+        };
+        cout << msg[ind % 7] << endl;
+    }
+};
+// Mole Class
+class Mole : public Animal 
+{
+public:
+    void speak(int ind) override
+    { 
+        string msg[] = {
+            "Mole: 'Yes! when a function is defined inside a class, it is treated as an inline function. Therefore, all the restrictions are limitations that apply to an inline function are also applicable here. Normally, only small functions are defined inside the class definition.'", 
+            "Mole: 'Protected data is accessible inside the class and by derived (child) classes. It is not accessible outside the class (i.e., from main() or non-member functions) and is used when you want child classes to have access, but not external users.\n\n'", 
+            "Mole: 'Operator overloading is one of the important features of C++ language that enhances its exhaustibility. Using overloading feature we can add two user defined data types such as objects, with the same syntax, just as basic data types.'", 
+            "Mole: 'The casting operator function should satisfy the following conditions:\n 1] It must be a class member\n 2] It must not specify a return type\n 3] It must not have any arguments\n\n'",
+            "Mole: 'A public member inherited in public mode becomes public, whereas inherited in private mode becomes private in the derived class. The friend functions and the member functions of a friend class can directly access the private and protected data. The member functions of a derived class can directly access only the protected and public data.'",
+            "Mole: 'C++ uses a unique keyword called this to represent an object that invokes a member function. this is a pointer that points to the object for which this function was called. This unique pointer is automatically passed to a member function when it is called. The pointer this acts as an implicit argument to all the member functions.'\n\n",
+            "Mole: 'Oh yes! Now before we let you go, we must warn you. Where this boat stops, a maze starts. Remember everything we have taught you and solve the questions to the best of your ability.'"
+        };
+        cout << msg[ind % 7] << endl;
+    }
+};
+
+// Turtle Class
+class Turtle : public Animal 
+{
+public:
+    void speak(int ind) override
+    { 
+        string msg[] = {
+            "Turtle: 'Mhm! the member functions have some special characteristics that are often used in the program development. Like:\n 1] Several different classes can be use the same function name. The 'membership label' will resolve their scope.\n 2] Member functions can access the private data of the class. A nonmember function cannot do so.\n 3] A member function can call another member function directly,without using the dot operator.'\n\n", 
+            "Turtle: 'It is possible to take the address of a member of a class and assign it to a pointer. The address of a member can be obtained by applying the operator & to a 'full qualified' class member name. A class member pointer can be declared using the operator ::* with the class name.'", 
+            "Turtle: 'We can overload almost all the C++ operators except - class member access operators (.,.*), scope resolution operator (::), size operator (sizeof), conditional operator (?;)'", 
+            "Turtle: 'The mechanism of deriving a new class from an old class is called inheritance. Inheritance provides the concept of reusability. The C++ classes can be reused using inheritance.'",
+            "Turtle: 'However! they can access the private data through the member functions of the base class. Multipath inheritance may lead to duplication of inherited members from a grandparent base class. This may be avoided by making the common base class a virtual class.'",
+            "Turtle: 'Polymorphism means 'one name, multiple forms'. It can be broadly classified into two catgeories: Compile time polymorphism and Run time polymorphism. Compile time polymorphism simply means that an object is bound to its function call at the compile time. ",
+            "Turtle: 'All the best to you little lady! We hope you find your way out!' "            
+        };
+        cout << msg[ind % 7] << endl;
+    }
+};
+
+void speaks(Animal &a, int &ind)
+{
+    a.speak(ind);
+    ind++;
+}
+
+int main() 
+{
+    Owl o;
+    Fish f;
+    Cat c;
+    Mole m;
+    Turtle t;
+
+    int oind = 0, find = 0, cind = 0, mind = 0, tind = 0;
+    
+    cout << "Alice busts out the final door in the Hall of Knowledge. She runs as quickly as she can, desperate to get away from that Hall she encountered. As she runs, she spots the White Rabbit. Aha! This was the Rabbit that led her here. And she was determined to make him pay. She runs faster, calling out to the White Rabbit. The Rabbit, indifferent to Alice calling him, untied the knot that held the boat to shore and jumped in. The Rabbit sails away just as Alice reaches the shore. She was about to lose all hope when she spotted another boat. Alice brightened up and quickly untied the knot holding this boat to the shore. She sets sail, right behind the Rabbit, determined to get to him. As her boat moves with waves leading her closer to the Rabbit, a Mole pops his little head out. Alice is surprised to see him. 'Hello there!', the Mole waves to her with a smile. Before she can recover, an Owl, a Fish and a Turtle join them. 'Hey!', the others wave to her.\n\n";
+
+    
+    for (int i = 0; i < 56; i++)
+    {
+        int choice = i % 8;  
+        switch (choice) {
+            case 0: {
+                speaks(o, oind); 
+                break;}
+            case 1: {
+                speaks(f, find); 
+                break;}
+            case 2: {
+                speaks(c, cind); 
+                break;}
+            case 3: {
+                speaks(m, mind); 
+                break;}
+            case 4: {
+                speaks(t, tind); 
+                break;}
+        }
+    }
+
+    return 0;
+}
+
+//maze class
 #include <iostream>
 using namespace std;
 
