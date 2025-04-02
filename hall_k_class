@@ -122,9 +122,10 @@ class hall_of_knowledge
     int evaluate(int i)
     {
         counter++;
-        if (input == A[i]) // Direct character comparison
+        if (input == A[i])
         {
             cout<<"Pass" << endl;
+            check++;
             return 1;
         }
         else
@@ -148,7 +149,7 @@ class hall_of_knowledge
             } while ((input!='A' && input!='B' && input!='C' && input!='D') || !evaluate(i));
             cout<<endl;
         }
-        cout<<"Your score is: "<<check<<"/6";
+        cout<<"Your score is: "<<check<<"/15";
     }
 };
 int main()
