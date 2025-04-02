@@ -417,15 +417,7 @@ class madhatter
 class Queen 
 {
 public:
-    void meet() 
-    {
-        cout << "Queen: Well, well, well. Look who it is! Another clueless little girl in MY domain." << endl;
-        cout << "Alice: Oh great, another self-important ruler who thinks they own the place." << endl;
-        cout << "Queen: You dare to stand before me without understanding the very fabric of the world you exist in?" << endl;
-        cout << "Queen: Hmph! Let me see if you have even a clue about Object-Oriented Programming!" << endl;
-        cout << "Alice: I do understand OOP, thank you very much. But sure, go on with your royal nonsense." << endl;
-        fight();  
-    }
+    
     void fight() 
     {
         cout << "\nQueen: First, let's talk about necessity. Why OOP, you ask? Because without it, the world would be a chaotic mess of unstructured code!" << endl;
@@ -570,10 +562,18 @@ class Alice : public hall_of_knowledge , public Animal , public maze , public ma
         cout<<"To drink the tea, debug the question provided to you when you pour in the tea."<<endl;
         cout << "From the other end of the table, rabbits say to Alice that, \"each wrong answer while debugging would lead to the Madhatter scolding her.\"" << endl;
     }
+    void fifth() 
+    {
+        cout << "Queen: Well, well, well. Look who it is! Another clueless little girl in MY domain." << endl;
+        cout << "Alice: Oh great, another self-important ruler who thinks they own the place." << endl;
+        cout << "Queen: You dare to stand before me without understanding the very fabric of the world you exist in?" << endl;
+        cout << "Queen: Hmph! Let me see if you have even a clue about Object-Oriented Programming!" << endl;
+        cout << "Alice: I do understand OOP, thank you very much. But sure, go on with your royal nonsense." << endl;
+    }
 };
 int main()
 {
-   Alice A,B,C,D,E,F,G,H,I,J,K,L,M;
+   Alice A,B,C,D,E,F,G,H,I,J;
    //INTRO FN
    A.first();
    //hall of knowledge
@@ -606,19 +606,20 @@ int main()
         index++;
     }
     //third stage
-    I.third();
+    E.third();
     //maze
-    while (J.getexit() > 0) 
+    while (F.getexit() > 0) 
     {
-        J.ask();
+        F.ask();
     }
     cout << "You have escaped the maze!" << endl;
     //forth stage
-    K.forth();
+    G.forth();
     //madhatter
-    L.challenge();
+    H.challenge();
     //fith stage 
+    I.fifth();
     //queen
-    M.meet();
+    J.fight();
     return 0;
 }
