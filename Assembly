@@ -581,28 +581,29 @@ int main()
    //second stage
    C.sec();
     //animal
-    int Dind = 0, Eind = 0, Find = 0, Gind = 0, Hind = 0;
-    for (int i = 0; i < 56; i++)
+    int index = 0;
+    for (int i = 0; i < 56; i++) 
     {
-        int choice = i % 8;  
+        int choice = i % 5; 
         switch (choice) 
         {
-            case 0: {
-                owl(D, Dind); 
-                break;}
-            case 1: {
-                fish(E, Eind); 
-                break;}
-            case 2: {
-                cat(F, Find); 
-                break;}
-            case 3: {
-                mole(G, Gind); 
-                break;}
-            case 4: {
-                turtle(H, Hind); 
-                break;}
+            case 0: 
+                D.owl(index);
+                break;
+            case 1: 
+                D.fish(index);
+                break;
+            case 2: 
+                D.cat(index);
+                break;
+            case 3: 
+                D.mole(index);
+                break;
+            case 4: 
+                D.turtle(index);
+                break;
         }
+        index++;
     }
     //third stage
     I.third();
