@@ -11,7 +11,7 @@ class hall_of_knowledge
     char A[14];
     char input;
     public:
-    void display_rabbit_hole()
+    void call_rabbit_hole()
         {
             count++;
             cout<<"\nObjective "<<count<<"."<<endl<<endl;
@@ -93,7 +93,7 @@ class hall_of_knowledge
         counter++;
         display_theory();
     }
-    void display_theory()
+    void call_theory()
         {
         cout<<"\nDoor "<<counter<<" has been opened."<<endl<<endl;
         switch (counter)
