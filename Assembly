@@ -214,6 +214,8 @@ public:
         };
         cout << messages[ind % 7] << "\n";
     }
+    ~Animal()
+    { }
 };
 class maze
 {
@@ -299,6 +301,8 @@ public:
     int getexit() {
         return exit;
     }
+    ~maze()
+    { }
 };
 class madhatter
 {
@@ -384,7 +388,7 @@ class madhatter
                 return false;
             }
     }
-    void challenge()
+    void question()
     {
         for (int i=0;i<17;i++)
         {
@@ -401,6 +405,8 @@ class madhatter
         }
         cout<<"Your score is: "<<check<<"/16";
     }
+    ~madhatter ()
+    { }
 };
 class Queen 
 {
@@ -517,6 +523,8 @@ public:
             cout << "\n Alice wins! The Queen is defeated!" << endl;
         }
     }
+    ~Queen()
+    { }
 };
 class Alice : public hall_of_knowledge , public Animal , public maze , public madhatter , public Queen
 {
@@ -604,7 +612,7 @@ int main()
     //forth stage
     G.forth();
     //madhatter
-    H.challenge();
+    H.question();
     //fith stage 
     I.fifth();
     //queen
