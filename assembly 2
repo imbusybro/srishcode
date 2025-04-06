@@ -569,7 +569,7 @@ int main()
     int oind = 0, find = 0, cind = 0, mind = 0, tind = 0;
     
     cout << "Alice busts out the final door in the Hall of Knowledge. She runs as quickly as she can, desperate to get away from that Hall she encountered. As she runs, she spots the White Rabbit. Aha! This was the Rabbit that led her here. And she was determined to make him pay. She runs faster, calling out to the White Rabbit. The Rabbit, indifferent to Alice calling him, untied the knot that held the boat to shore and jumped in. The Rabbit sails away just as Alice reaches the shore. She was about to lose all hope when she spotted another boat. Alice brightened up and quickly untied the knot holding this boat to the shore. She sets sail, right behind the Rabbit, determined to get to him. As her boat moves with waves leading her closer to the Rabbit, a Mole pops his little head out. Alice is surprised to see him. 'Hello there!', the Mole waves to her with a smile. Before she can recover, an Owl, a Fish and a Turtle join them. 'Hey!', the others wave to her.\n\n";
-    for (int i = 0; i < 56; i++)
+    for (int i = 0; i < 35; i++)
     {
         int choice = i % 8;  
         switch (choice) {
