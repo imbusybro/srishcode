@@ -121,21 +121,6 @@ class hall_of_knowledge
         cin>>input;
         input=toupper(input);
     }
-    int evaluate(int i)
-    {
-        counter++;
-        if (input == A[i])
-        {
-            cout<<"Pass" << endl;
-            check++;
-            return 1;
-        }
-        else
-        {
-            cout<<"Fail" << endl;
-            return 0;
-        }
-    }
     void question()
     {
         for (int i=0;i<14;i++)
@@ -148,11 +133,13 @@ class hall_of_knowledge
                 {
                     cout <<"Invalid answer. Please choose A, B, C, or D."<<endl;
                 }
-            } while ((input!='A' && input!='B' && input!='C' && input!='D') || !evaluate(i));
+            } while (input!='A' && input!='B' && input!='C' && input!='D');
             cout<<endl;
+            counter++;
         }
-        cout<<"Your score is: "<<check<<"/15";
     }
+    ~hall_of_knowledge()
+    { }
 };
 class Animal
 {
