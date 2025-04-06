@@ -91,7 +91,7 @@ class hall_of_knowledge
     void open_door()
     {
         counter++;
-        display_theory();
+        call_theory();
     }
     void call_theory()
         {
@@ -111,7 +111,7 @@ class hall_of_knowledge
                 cout<<"Operators are symbols that perform operations on variables and values.\nTypes of operators:\n\nArithmetic (+, -, *, /, %)\nRelational (==, !=, <, >, <=, >=)\nLogical (&&, ||, !)\nBitwise (&, |, ^, ~, <<, >>)\nAssignment (=, +=, -=, *=, /=, %=)\n";
                 break;
             case 5:
-                cout<<"Type casting operator\n";
+                cout<<"Type conversion means converting one type of data to another compatible type such that it doesnt lose its meaning. It is essential for managing different data types in C++.\n";
                 break;
         }
     }
@@ -534,7 +534,7 @@ class Alice : public hall_of_knowledge , public Animal , public maze , public ma
         cout<<"Alice followed the rabbit into the rabbit hole and tumbled into a seemingly endless fall. The air rushed past her as she spiraled downward, her surroundings shifting in eerie slow motion. Strange symbols and words flickered across the walls of the tunnel, glowing faintly as if whispering secrets only she could see."<<endl;
         for (int i=0;i<8;i++)
             {
-                display_rabbit_hole();
+                call_rabbit_hole();
             }
         cout<<"Hello Alice!!\nWelcome to the Hall Of Knowdledge."<<endl;
         cout<<"To exit this level you must open all the doors and read and understand the Knowledge provieded behind each door. Then answer the Quiz provieded at the last door to exit."<<endl;
