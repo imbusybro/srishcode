@@ -11,7 +11,7 @@ class hall_of_knowledge
     char A[14];
     char input;
     public:
-    void rabbit_hole()
+    void display_rabbit_hole()
         {
             count++;
             cout<<"\nObjective "<<count<<"."<<endl<<endl;
@@ -121,7 +121,7 @@ class hall_of_knowledge
         cin>>input;
         input=toupper(input);
     }
-    void question()
+    void get_question()
     {
         for (int i=0;i<14;i++)
         {
@@ -144,7 +144,7 @@ class hall_of_knowledge
 class Animal
 {
 public:
-    void owl(int ind) 
+    void speak_owl(int ind) 
     {
         string messages[] = 
         {
@@ -158,7 +158,7 @@ public:
         };
         cout << messages[ind % 7] << "\n";
     }
-    void fish(int ind) 
+    void speak_fish(int ind) 
     {
         string messages[] =
         {
@@ -172,7 +172,7 @@ public:
         };
         cout << messages[ind % 7] << "\n";
     }
-    void cat(int ind) 
+    void speak_cat(int ind) 
     {
         string messages[] = 
         {
@@ -186,7 +186,7 @@ public:
         };
         cout << messages[ind % 7] << "\n";
     }
-    void mole(int ind) 
+    void speak_mole(int ind) 
     {
         string messages[] = 
         {
@@ -200,7 +200,7 @@ public:
         };
         cout << messages[ind % 7] << "\n";
     }
-    void turtle(int ind) 
+    void speak_turtle(int ind) 
     {
         string messages[] = 
         {
@@ -298,7 +298,7 @@ public:
         }
         counter++;
     }
-    int getexit() {
+    int get_exit() {
         return exit;
     }
     ~maze()
@@ -388,7 +388,7 @@ class madhatter
                 return false;
             }
     }
-    void question()
+    void get_question()
     {
         for (int i=0;i<17;i++)
         {
@@ -436,7 +436,7 @@ public:
         cout << "Alice: Sure, if by 'original' you mean the buggiest prototype." << endl;
         cout << "Queen: Enough! Be gone, before I override your existence!" << endl;
         cout << "Alice: Oh, don't worry, I'm done wasting memory on this conversation." << endl;
-        spells();
+        cast_spells();
     }
 private:
     class Question 
@@ -479,7 +479,7 @@ public:
         questions[14] = Question("What will be the output of the following?\n#include<iostream>\nusing namespace std;\nclass Room\n{\nfloat mWidth;\nfloat mLength;\npublic:\nRoom():mWidth(0),mLength(0){}\nRoom(float w,float h):mWidth(w),mLength(h){}\noperator float()\n{\nreturn mWidth*mLength;\n}\nfloat getWidth(){return mWidth;}\nfloat getLength(){return mLength;}\n};\nint main()\n{\nRoom objRoom(2.5,2.5);\nfloat fTotalArea;\nfTotalArea=objRoom;\ncout<<fTotalArea;\nreturn 0;\n}", "A) The class Room should not have an implicit conversion operator", "B) The default constructor should initialize member variables", "C) cout is undefined because std:: is missing", "D) The operator float() should return an integer value", 'C');
 
     }
-    void spells() 
+    void cast_spells() 
     {
         cout << "\nQueen: You insolent little WITCH! I'll teach you a lesson" << endl;
         char answer;
@@ -529,12 +529,12 @@ public:
 class Alice : public hall_of_knowledge , public Animal , public maze , public madhatter , public Queen
 {
     public:
-    void first()
+    void display_first()
     {
         cout<<"Alice followed the rabbit into the rabbit hole and tumbled into a seemingly endless fall. The air rushed past her as she spiraled downward, her surroundings shifting in eerie slow motion. Strange symbols and words flickered across the walls of the tunnel, glowing faintly as if whispering secrets only she could see."<<endl;
         for (int i=0;i<8;i++)
             {
-                rabbit_hole();
+                display_rabbit_hole();
             }
         cout<<"Hello Alice!!\nWelcome to the Hall Of Knowdledge."<<endl;
         cout<<"To exit this level you must open all the doors and read and understand the Knowledge provieded behind each door. Then answer the Quiz provieded at the last door to exit."<<endl;
@@ -544,21 +544,21 @@ class Alice : public hall_of_knowledge , public Animal , public maze , public ma
         }
         cout<<"The Quiz begins.\n All The Best!!"<<endl;
     }
-    void sec()
+    void display_sec()
     {
         cout << "Alice busts out the final door in the Hall of Knowledge. She runs as quickly as she can, desperate to get away from that Hall she encountered. As she runs, she spots the White Rabbit. Aha! This was the Rabbit that led her here. And she was determined to make him pay. She runs faster, calling out to the White Rabbit. The Rabbit, indifferent to Alice calling him, untied the knot that held the boat to shore and jumped in. The Rabbit sails away just as Alice reaches the shore. She was about to lose all hope when she spotted another boat. Alice brightened up and quickly untied the knot holding this boat to the shore. She sets sail, right behind the Rabbit, determined to get to him. As her boat moves with waves leading her closer to the Rabbit, a Mole pops his little head out. Alice is surprised to see him. 'Hello there!', the Mole waves to her with a smile. Before she can recover, an Owl, a Fish and a Turtle join them. 'Hey!', the others wave to her.\n\n";
     }
-    void third()
+    void display_third()
     {
         cout << "\n\n\n The animals quickly leave Alice's side as she approaches the island. She was so caught up with their talking, she forgot about the White Rabbit! Nonetheless, as she ties the boat to shore, she tries to recall everything the animals taught her. After all, they did warn her about a maze. She wonders what it was all about. Just as Alice begins to walk onto the island, she spots the Rabbit again! She breaks into a sprint, chasing behind the Rabbit. But as always, the Rabbit was too quick for her. She chased him through the highs and lows of the jungle until she managed to reach a maze. She tried to follow the Rabbit in, but she quickly lost sight of him. Alice suddenly remembers the warning of the animals....This was the maze they were talking about! With newfound determination, Alice steps forward. She was going to make her way out of this\n\n." << endl;
     }
-    void forth()
+    void display_forth()
     {
         cout << "\"Hello and Welcome to the tea bugging party!!\" says The Madhatter." << endl;
         cout<<"To drink the tea, debug the question provided to you when you pour in the tea."<<endl;
         cout << "From the other end of the table, rabbits say to Alice that, \"each wrong answer while debugging would lead to the Madhatter scolding her.\"" << endl;
     }
-    void fifth() 
+    void display_fifth() 
     {
         cout << "Queen: Well, well, well. Look who it is! Another clueless little girl in MY domain." << endl;
         cout << "Alice: Oh great, another self-important ruler who thinks they own the place." << endl;
@@ -571,11 +571,11 @@ int main()
 {
    Alice A,B,C,D,E,F,G,H,I,J;
    //INTRO FN
-   A.first();
+   A.display_first();
    //hall of knowledge
-   B.hall_of_knowledge::question(); 
+   B.hall_of_knowledge::get_question(); 
    //second stage
-   C.sec();
+   C.display_sec();
     //animal
     int index = 0;
     for (int i = 0; i < 56; i++) 
@@ -584,37 +584,37 @@ int main()
         switch (choice) 
         {
             case 0: 
-                D.owl(index);
+                D.speak_owl(index);
                 break;
             case 1: 
-                D.fish(index);
+                D.speak_fish(index);
                 break;
             case 2: 
-                D.cat(index);
+                D.speak_cat(index);
                 break;
             case 3: 
-                D.mole(index);
+                D.speak_mole(index);
                 break;
             case 4: 
-                D.turtle(index);
+                D.speak_turtle(index);
                 break;
         }
         index++;
     }
     //third stage
-    E.third();
+    E.display_third();
     //maze
-    while (F.getexit() > 0) 
+    while (F.get_exit() > 0) 
     {
         F.ask();
     }
     cout << "You have escaped the maze!" << endl;
     //forth stage
-    G.forth();
+    G.display_forth();
     //madhatter
-    H.question();
+    H.madhatter::get_question();
     //fith stage 
-    I.fifth();
+    I.display_fifth();
     //queen
     J.fight();
     return 0;
