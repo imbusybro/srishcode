@@ -18,16 +18,16 @@ class hall_of_knowledge
             switch (count)
             {
                 case 1:
-                        cout<<"In C++, single-line comments are written using //.Everything after // on that line is ignored by the compiler.They are useful for providing brief explanations about the code.\nEg:\n// This is a single-line commentint\nx = 10; // Initializing variable x\n";
+                        cout<<"In C++, single-line comments are written using //.Everything after // on that line is ignored by the compiler. They are useful for providing brief explanations about the code.\nEg:\n// This is a single-line commentint\nx = 10; // Initializing variable x\n";
                     break;
                 case 2:
-                          cout<<"A function declaration, also known as a function prototype, informs the compiler about the function's name, return type, and parameters before its actual definition.This is important in cases where the function definition appears later in the program.\n";
+                          cout<<"A function declaration, also known as a function prototype, informs the compiler about the function's name, return type, and parameters before its actual definition. This is important in cases where the function definition appears later in the program.\n";
                     break;
                 case 3:
                         cout<<"A local variable is declared inside a function and can only be accessed within that function.\nIt is created when the function starts and destroyed when the function ends.\nLocal variables cannot be accessed outside the function.\n";
                     break;
                 case 4:
-                          cout<<"C++ has a strict type system than C, preventing unintended type conversions that could lead to errors.Type checking ensures variables and expressions follow proper data type rules.\n\nint x = 10.5; // Compiler gives a warning or error due to implicit conversion from double to int\n";
+                          cout<<"C++ has a stricter type system than C, preventing unintended type conversions that could lead to errors. Type checking ensures variables and expressions follow proper data type rules.\n\nint x = 10.5; // Compiler gives a warning or error due to implicit conversion from double to int\n";
                     break;
                 case 5:
                           cout<<"A reference is an alias for an existing variable.\nIt must be initialized when declared and cannot be changed later.\nReferences are commonly used in function parameter passing to avoid copying large objects.\n\nEg:\nint a = 10;\nint &ref = a; // ref is another name for a\nref = 20; // Now, a is also 20\n";
@@ -36,10 +36,10 @@ class hall_of_knowledge
                           cout<<"When a function receives a parameter by value, it gets a copy of the argument, meaning changes inside the function do not affect the original variable.\n";
                     break;
                 case 7:
-                          cout<<"When a function receives a parameter by reference, it works with the original variable.Changes inside the function affect the original variable.\n";
+                          cout<<"When a function receives a parameter by reference, it works with the original variable. Changes inside the function affect the original variable.\n";
                     break;
                 case 8:
-                          cout<<"A default argument is a value assigned to a function parameter that is used when no argument is provided during the function call.Default arguments are specified in the function declaration.\n"<<endl;
+                          cout<<"A default argument is a value assigned to a function parameter that is used when no argument is provided during the function call. Default arguments are specified in the function declaration.\n"<<endl;
                     break;
             }
         }
@@ -75,7 +75,7 @@ class hall_of_knowledge
         //operators
         Q[9]="What will be the output of the following code?\nint a = 5, b = 10;\ncout << (a > 2 && b < 20);\nA) 0\nB) 1\nC) true\nD) false\n";
         A[9]='B';
-        //inline functuion
+        //inline function
         Q[10]=" Consider the following code snippet:\ninline int square(int x)\n{ return x * x; }\nint main()\n{\ncout << square(5 + 2);\n}\nWhat will be the output?\nA) 49\nB) 25\nC) Compilation error\nD) Undefined behavior\n";
         A[10]='A';
         //inline function
@@ -102,16 +102,16 @@ class hall_of_knowledge
                 cout<<"Overloading refers to the use of the same thing for different purposes.\nC++ also permits overloading of functions.\nThis means that we can use the same function name to create functions that perform a variety of different tasks.\nThis is known as function polymorphism in OOP.\nUsing the concept of function overloading; we can design a family of functions with one function name but with different argument lists.\nThe function would perform different operations depending on the argument list in the function call.\nThe correct function to be invoked is determined by checking the number and type of the arguments but not on the function type.\nFor example, an overloaded add() function handles different types of data as shown below:\nint add(int a, int b, int c);        // prototype 1\ndouble add(double x, double y);      // prototype 2\ndouble add(int p, double q);         // prototype 3\n\ncout << add(5, 10, 15);              // uses prototype 1\ncout << add(12.5, 7.5);              // uses prototype 2\ncout << add(15, 10.0);               // uses prototype 3\n";
                 break;
             case 2:
-                cout<<"An object can be created by using new, and destroyed by using delete, as and when required. A data object created inside a block with new, will remain in existence until it is explicitly destroyed by using delete. Thus, the lifetime of an object is directly under our control and is unrelated to the block structure of the program.The new operator can be used to create objects of any type. It takes the following general form:\n\npointer-variable = new data-type;\n\nHere, pointer-variable is a pointer of type data-type. The new operator allocates sufficient memory to hold a data object of type data-type and returns the address of the object. The data-type may be any valid data type. The pointer-variable holds the address of the memory space allocated. Examples:\n\np = new int;\nq = new float;\n\nWhen a data object is no longer needed, it is destroyed to release the memory space for reuse. The general form of its use is:\n\ndelete pointer-variable;\n\nThe pointer-variable is the pointer that points to a data object created with new. Examples:\n\ndelete p;\ndelete q;\n";
+                cout<<"An object can be created by using new and destroyed by using delete, as and when required. A data object created inside a block with new will remain in existence until it is explicitly destroyed by using delete. Thus, the lifetime of an object is directly under our control and is unrelated to the block structure of the program. The new operator can be used to create objects of any type. It takes the following general form:\n\npointer-variable = new data-type;\n\nHere, pointer-variable is a pointer of type data-type. The new operator allocates sufficient memory to hold a data object of type data type and returns the address of the object. The data type may be any valid data type. The pointer variable holds the address of the memory space allocated. Examples:\n\np = new int;\nq = new float;\n\nWhen a data object is no longer needed, it is destroyed to release the memory space for reuse. The general form of its use is:\n\ndelete pointer-variable;\n\nThe pointer-variable is the pointer that points to a data object created with new. Examples:\n\ndelete p;\ndelete q;\n";
                 break;
             case 3:
-                cout<<"One of the objectives of using functions in a program is to save some memory space, which becomes appreciable when a function is likely to be called many times. However, every time a function is called, it takes a lot of extra time in executing a series of instructions for tasks such as jumping to the function, saving registers, pushing arguments into the stack, and returning to the calling function. When a function is small, a substantial percentage of execution time may be spent in such overheads.\nC++ has a different solution to this problem. To eliminate the cost of calls to small functions, C++ proposes a new feature called inline function. An inline function is a function that is expanded in line when it is invoked. That is, the compiler replaces the function call with the corresponding function code (something similar to macros expansion).\nIt is easy to make a function inline. All we need to do is to prefix the keyword inline to the function definition. All inline functions must be defined before they are called.\nEg:\n\n\tinline double cube(double a)\n\t{\n\treturn (a * a * a);\n\t}\n\tc = cube(3.0);\n\td = cube(2.5 + 1.5);\n\nThe speed benefits of inline functions diminish as the function grows in size. At some point, the overhead of the function call becomes small compared to the execution of the function, and the benefits of inline functions may be lost. In such cases, the use of normal functions will be more meaningful.\n";
+                cout<<"One of the objectives of using functions in a program is to save some memory space, which becomes appreciable when a function is likely to be called many times. However, every time a function is called, it takes a lot of extra time to execute a series of instructions for tasks such as jumping to the function, saving registers, pushing arguments into the stack, and returning to the calling function. When a function is small, a substantial percentage of execution time may be spent in such overheads.\nC++ has a different solution to this problem. To eliminate the cost of calls to small functions, C++ proposes a new feature called inline function. An inline function is a function that is expanded in line when it is invoked. That is, the compiler replaces the function call with the corresponding function code (something similar to macros expansion).\nIt is easy to make a function inline. All we need to do is to prefix the keyword inline to the function definition. All inline functions must be defined before they are called.\nEg:\n\n\tinline double cube(double a)\n\t{\n\treturn (a * a * a);\n\t}\n\tc = cube(3.0);\n\td = cube(2.5 + 1.5);\n\nThe speed benefits of inline functions diminish as the function grows in size. At some point, the overhead of the function call becomes small compared to the execution of the function, and the benefits of inline functions may be lost. In such cases, the use of normal functions will be more meaningful.\n";
                 break;
             case 4:
                 cout<<"Operators are symbols that perform operations on variables and values.\nTypes of operators:\n\nArithmetic (+, -, *, /, %)\nRelational (==, !=, <, >, <=, >=)\nLogical (&&, ||, !)\nBitwise (&, |, ^, ~, <<, >>)\nAssignment (=, +=, -=, *=, /=, %=)\n";
                 break;
             case 5:
-                cout<<"Type conversion means converting one type of data to another compatible type such that it doesnt lose its meaning. It is essential for managing different data types in C++.\n";
+                cout<<"Type conversion means converting one type of data to another compatible type such that it doesn't lose its meaning. It is essential for managing different data types in C++.\n";
                 break;
         }
     }
@@ -148,8 +148,8 @@ public:
     {
         string messages[] = 
         {
-            "Owl: 'You know my dear Alice, the scope of a variable extends from the point of its declaration till the end of the block containing the declaration. A variable declared inside a block is said to be local to that block.You should remember that a declaration of the same variable in an outer block, and therefore, each declaration of a variable causes it to refer to a different data object.'", 
-            "Owl: 'C++ allows the common functions to be made friendly with both the classes, thereby allowing the function to have access to the private data of these classes. Such a function need not be a member of any of these classes. Also, the function declaration should be preceded by the keyword 'friend'.\nFish: 'A friend function has special characteristics:\n1] It is not in scope of the class to ehich it has been declared as friend\n2] Since it is not in the scope of the class, it cannot be called using the object of that class.\n3] It can be invoked like a normal function without the help of any object.\n4] Unlike member functions, it cannot access the member names directly and has to use an object name and dot membership operator with each member name.\n5] It can be declared either in the public or the private part of a class without affecting its meaning.\n6] Usually, it has the objects as arguments.'\nCat: 'You can declare all the member functions of one class as the friend functions of another class. In such cases, the class is called a friend class.'\n\n Owl: 'Although it is normal practice to place all the data items in a private section and all the functions in public, some situations may require certain functions to be hidden from outside calls.'", 
+            "Owl: 'You know my dear Alice, the scope of a variable extends from the point of its declaration till the end of the block containing the declaration. A variable declared inside a block is said to be local to that block. You should remember that a declaration of the same variable in an outer block, and therefore, each declaration of a variable causes it to refer to a different data object.'", 
+            "Owl: 'C++ allows the common functions to be made friendly with both classes, thereby allowing the function to have access to the private data of these classes. Such a function need not be a member of any of these classes. Also, the function declaration should be preceded by the keyword 'friend'.\nFish: 'A friend function has special characteristics:\n1] It is not in the scope of the class to which it has been declared as friend\n2] Since it is not in the scope of the class, it cannot be called using the object of that class.\n3] It can be invoked like a normal function without the help of any object.\n4] Unlike member functions, it cannot access the member names directly and has to use an object name and dot membership operator with each member name.\n5] It can be declared either in the public or the private part of a class without affecting its meaning.\n6] Usually, it has the objects as arguments.'\nCat: 'You can declare all the member functions of one class as the friend functions of another class. In such cases, the class is called a friend class.'\n\n Owl: 'Although it is normal practice to place all the data items in a private section and all the functions in public, some situations may require certain functions to be hidden from outside calls.'", 
             "Owl: 'The deferencing operator ->* is used to access a member when we use pointers to both the objects and the member. The deferencing operator is used when the object itself is used with the member pointer.\n\n'",
             "Owl: 'Operator overloading is done with the help of a special function, called operator function, which describes the special task to an operator. There are certain restrictions and limitations in overloading operators.'",
             "Owl: 'The derived class inherits some or all of the properties of the base class. A derived class with only one base class is called single inheritance. A class can inherit properties from more than one class which is known as multiple inheritance.'",
@@ -162,13 +162,13 @@ public:
     {
         string messages[] =
         {
-            "Fish: 'Yeah Alice! C++ resolves this problem by introducing a new operator :: called the scope resolution operator. This operator allows access to the global version of a variable.\n\n'", 
-            "Fish: 'We can place these functions in the private section. A private function can only be called by another function that is a member of its class. Even an object cannot invoke a private function using dot operator.'", 
-            "Fish: 'C++ provides a special member function called the constructor which enables an object to initialize itself when it is created. This is known as automatic initialization of objects. A constructor has the same name as that of the class. It is normally used to initialize variables and to allocate memory. They can also be overloaded.'", 
-            "Fish: 'Operator functions must either be member functions (nonstatic) or friend functions. The overloading operator must have at least one operand that is of user defined type.'",
+            "Fish: 'Yeah Alice! C++ resolves this problem by introducing a new operator:: called the scope resolution operator. This operator allows access to the global version of a variable.\n\n'", 
+            "Fish: 'We can place these functions in the private section. A private function can only be called by another function that is a member of its class. Even an object cannot invoke a private function using the dot operator.'", 
+            "Fish: 'C++ provides a special member function called the constructor which enables an object to initialize itself when it is created. This is known as the automatic initialization of objects. A constructor has the same name as that of the class. It is normally used to initialize variables and to allocate memory. They can also be overloaded.'", 
+            "Fish: 'Operator functions must either be member functions (nonstatic) or friend functions. The overloading operator must have at least one operand that is of user-defined type.'",
             "Fish: 'A class can be derived from another derived class which is known as multilevel inheritance. When the properties of one class are inherited by more than one class, it is called hierarchical inheritance.'",
             "Fish: 'A pointer can point to an object created by a class. Object pointers are useful in creating objects at run time. You can also use an object pointer to access the public members of an object. You can refer to the member functions in two ways, one by using the dot operator and the object and another using the arrow operator and the object pointer.'",
-            "Fish: 'Run time polymorphism defers the linking of a function call to a particular class much later, that is, at run time. Thus, it is not known which function will be invoked till an object actually makes the function call during the program's execution. This process is referred as late or dynamic binding.\n\n"
+            "Fish: 'Run time polymorphism defers the linking of a function call to a particular class much later, that is, at run time. Thus, it is not known which function will be invoked till an object makes the function call during the program's execution. This process is referred to as late or dynamic binding.\n\n"
         };
         cout << messages[ind % 7] << "\n";
     }
@@ -176,10 +176,10 @@ public:
     {
         string messages[] = 
         {
-            "Cat: 'Also! member functions can be defined in two places: outside the class definition or inside the class definition. An important difference between a member functionand a ormal function is that a member function incorporates a membership 'identity label' in the header. This 'label' tells the compiler which class the function belongs to.'", 
+            "Cat: 'Also! Member functions can be defined in two places: outside the class definition or inside the class definition. An important difference between a member function and a normal function is that a member function incorporates a membership 'identity label' in the header. This 'label' tells the compiler which class the function belongs to.'", 
             "Cat: 'Public data is accessible from anywhere -  inside the class, in derived (child) classes, and outside the class. It is often used for functions that provide an interface to interact with private or protected data.'", 
-            "Cat: 'When an object is created and initialized at the same time, a copy constructor gets called. We may make an object const if it does not modify any of  its data values. C++ also provides another member function called the destructor that destroys the objects when they are no longer required.\n\n", 
-            "Cat: 'The compiler does not support automatic type conversions for the user defined data types. We can use casting operator functions to achieve this.'",
+            "Cat: 'When an object is created and initialized at the same time, a copy constructor gets called. We may make an object const if it does not modify any of its data values. C++ also provides another member function called the destructor that destroys the objects when they are no longer required.\n\n", 
+            "Cat: 'The compiler does not support automatic type conversions for the user-defined data types. We can use casting operator functions to achieve this.'",
             "Cat: 'A private member of a class cannot be inherited either in public mode or private mode. A protected member inherited in public mode becomes protected, whereas inherited in private mode becomes private in the derived class.'",
             "Cat: 'Oh yes!\nx.getdata(100,75);\nx.show;\nis equivalent to\nptr->getdata(100,75);\nptr->show();\nYou can also create objects using pointers and new operator like so:\nitem *ptr=new item;\nThis statement allocates enough memory for the data members in the object structure and assigns the operator of the memory space to ptr.\n'",
             "Cat: 'I hope this talk with us was rewarding for you dearie!'"
@@ -190,9 +190,9 @@ public:
     {
         string messages[] = 
         {
-            "Mole: 'Yes! when a function is defined inside a class, it is treated as an inline function. Therefore, all the restrictions are limitations that apply to an inline function are also applicable here. Normally, only small functions are defined inside the class definition.'", 
+            "Mole: 'Yes! When a function is defined inside a class, it is treated as an inline function. Therefore, all the restrictions are limitations that apply to an inline function are also applicable here. Normally, only small functions are defined inside the class definition.'", 
             "Mole: 'Protected data is accessible inside the class and by derived (child) classes. It is not accessible outside the class (i.e., from main() or non-member functions) and is used when you want child classes to have access, but not external users.\n\n'", 
-            "Mole: 'Operator overloading is one of the important features of C++ language that enhances its exhaustibility. Using overloading feature we can add two user defined data types such as objects, with the same syntax, just as basic data types.'", 
+            "Mole: 'Operator overloading is one of the important features of C++ language that enhances its exhaustibility. Using the overloading feature we can add two user-defined data types such as objects, with the same syntax, just as basic data types.'", 
             "Mole: 'The casting operator function should satisfy the following conditions:\n 1] It must be a class member\n 2] It must not specify a return type\n 3] It must not have any arguments\n\n'",
             "Mole: 'A public member inherited in public mode becomes public, whereas inherited in private mode becomes private in the derived class. The friend functions and the member functions of a friend class can directly access the private and protected data. The member functions of a derived class can directly access only the protected and public data.'",
             "Mole: 'C++ uses a unique keyword called this to represent an object that invokes a member function. this is a pointer that points to the object for which this function was called. This unique pointer is automatically passed to a member function when it is called. The pointer this acts as an implicit argument to all the member functions.'\n\n",
@@ -204,12 +204,12 @@ public:
     {
         string messages[] = 
         {
-            "Turtle: 'Mhm! the member functions have some special characteristics that are often used in the program development. Like:\n 1] Several different classes can be use the same function name. The 'membership label' will resolve their scope.\n 2] Member functions can access the private data of the class. A nonmember function cannot do so.\n 3] A member function can call another member function directly,without using the dot operator.'\n\n", 
-            "Turtle: 'It is possible to take the address of a member of a class and assign it to a pointer. The address of a member can be obtained by applying the operator & to a 'full qualified' class member name. A class member pointer can be declared using the operator ::* with the class name.'", 
+            "Turtle: 'Mhm! The member functions have some special characteristics that are often used in program development. Like:\n 1] Several different classes can use the same function name. The 'membership label' will resolve their scope.\n 2] Member functions can access the private data of the class. A nonmember function cannot do so.\n 3] A member function can call another member function directly, without using the dot operator.'\n\n", 
+            "Turtle: 'It is possible to take the address of a member of a class and assign it to a pointer. The address of a member can be obtained by applying the operator & to a 'fully qualified' class member name. A class member pointer can be declared using the operator::* with the class name.'", 
             "Turtle: 'We can overload almost all the C++ operators except - class member access operators (.,.*), scope resolution operator (::), size operator (sizeof), conditional operator (?;)'", 
             "Turtle: 'The mechanism of deriving a new class from an old class is called inheritance. Inheritance provides the concept of reusability. The C++ classes can be reused using inheritance.'",
-            "Turtle: 'However! they can access the private data through the member functions of the base class. Multipath inheritance may lead to duplication of inherited members from a grandparent base class. This may be avoided by making the common base class a virtual class.'",
-            "Turtle: 'Polymorphism means 'one name, multiple forms'. It can be broadly classified into two catgeories: Compile time polymorphism and Run time polymorphism. Compile time polymorphism simply means that an object is bound to its function call at the compile time. ",
+            "Turtle: 'However! They can access the private data through the member functions of the base class. Multipath inheritance may lead to duplication of inherited members from a grandparent base class. This may be avoided by making the common base class a virtual class.'",
+            "Turtle: 'Polymorphism means 'one name, multiple forms'. It can be broadly classified into two categories: Compile time polymorphism and Run time polymorphism. Compile time polymorphism simply means that an object is bound to its function call at the compile time. ",
             "Turtle: 'All the best to you little lady! We hope you find your way out!' "          
         };
         cout << messages[ind % 7] << "\n";
@@ -242,7 +242,7 @@ public:
     question questions[20];
     maze() : complexity(1), exit(20), counter(0) {
         questions[0] = question("1. Alice, if a variable is declared inside a block, what is its scope?", "A) The entire program", "B) Until the end of that block", "C) Until the end of the function", "D) Until the program terminates", 'B');
-        questions[1] = question("2. Alice, which operator in C++ allows access to a global variable when a local variable has the same name?", "A) . (Dot operator)", "B) -> (Arrow operator)", "C) :: (Scope resolution operator)", "D) : (Colon operator)", 'C');
+        questions[1] = question("2. Alice, which operator in C++ allows access to a global variable when a local variable has the same name?", "A) . (Dot operator)", "B) -> (Arrow operator)", "C):: (Scope resolution operator)", "D) : (Colon operator)", 'C');
         questions[2] = question("3. Alice, where can member functions be defined?", "A) Inside or outside the class definition", "B) Only inside the class definition", "C) Only outside the class definition", "D) Only in the main function", 'A');
         questions[3] = question("4. Alice, which of the following is NOT true about friend functions?", "A) A friend function is not in the scope of the class it is declared in", "B) A friend function can access private members of a class", "C) A friend function can be declared in either public or private section", "D) A friend function can be called using the object of the class", 'D');
         questions[4] = question("5. Alice, which type of data access allows child classes to access data but prevents access from outside the class?", "A) Private", "B) Public", "C) Protected", "D) Friend", 'C');
@@ -369,7 +369,7 @@ class madhatter
                 {
                     "Oh honey, that was a bold choice, but still wrong. Try again! Perhaps with a bit more sanity?",
                     "Are you trying to make the compiler cry, or are we simply embracing the chaos today?",
-                    "Even the Mad Hatter is confused by that answer—and trust me, thats an achievement!",
+                    "Even the Mad Hatter is confused by that answer—and trust me, that's an achievement!",
                     "Are you sure about that? Or are you just playing a very risky game of make-believe?",
                     "That answer was so wrong, even the Cheshire Cat disappeared out of embarrassment.",
                     "Oops! That answer belongs in the Queen of Hearts dungeon—off with its head!",
@@ -377,12 +377,12 @@ class madhatter
                     "That was… a fascinating work of fiction. But no, try again!",
                     "If answers were tea, yours would have just spilled all over the table.",
                     "Oh, dear! That answer just fell down the rabbit hole—never to be seen again!",
-                    "You must be late for a very important fact-checking session, because that was NOT it!",
-                    "That answer is curiouser and curiouser… yet somehow still terribly wrong!",
+                    "You must be late for a very important fact-checking session because that was NOT it!",
+                    "That answer is curious and curiouser… yet somehow still terribly wrong!",
                     "I admire the confidence! The accuracy? Not even the White Rabbit could find it.",
-                    "If wrong answers earned XP, youd be the Mad Hatters grandmaster of nonsense by now!",
-                    "Your logic just took a detour… straight into Wonderlands most puzzling paradox.",
-                    "Id say close, but then Id be stretching reality thinner than the March Hares patience."
+                    "If wrong answers earned XP, you would be the MadHatter's grandmaster of nonsense by now!",
+                    "Your logic just took a detour… straight into Wonderland's most puzzling paradox.",
+                    "I'd say close, but then I'd be stretching reality thinner than the March Hares patience."
                 };
                 cout<<sass[i]<<endl;
                 return false;
@@ -536,8 +536,8 @@ class Alice : public hall_of_knowledge , public Animal , public maze , public ma
             {
                 call_rabbit_hole();
             }
-        cout<<"Hello Alice!!\nWelcome to the Hall Of Knowdledge."<<endl;
-        cout<<"To exit this level you must open all the doors and read and understand the Knowledge provieded behind each door. Then answer the Quiz provieded at the last door to exit."<<endl;
+        cout<<"Hello Alice!!\nWelcome to the Hall Of Knowledge."<<endl;
+        cout<<"To exit this level you must open all the doors and read and understand the Knowledge provided behind each door. Then answer the Quiz provided at the last door to exit."<<endl;
         for (int i=0;i<5;i++)
         {
             open_door();
@@ -546,11 +546,11 @@ class Alice : public hall_of_knowledge , public Animal , public maze , public ma
     }
     void display_sec()
     {
-        cout << "Alice busts out the final door in the Hall of Knowledge. She runs as quickly as she can, desperate to get away from that Hall she encountered. As she runs, she spots the White Rabbit. Aha! This was the Rabbit that led her here. And she was determined to make him pay. She runs faster, calling out to the White Rabbit. The Rabbit, indifferent to Alice calling him, untied the knot that held the boat to shore and jumped in. The Rabbit sails away just as Alice reaches the shore. She was about to lose all hope when she spotted another boat. Alice brightened up and quickly untied the knot holding this boat to the shore. She sets sail, right behind the Rabbit, determined to get to him. As her boat moves with waves leading her closer to the Rabbit, a Mole pops his little head out. Alice is surprised to see him. 'Hello there!', the Mole waves to her with a smile. Before she can recover, an Owl, a Fish and a Turtle join them. 'Hey!', the others wave to her.\n\n";
+        cout << "Alice busts out the final door in the Hall of Knowledge. She runs as quickly as she can, desperate to get away from that Hall she encountered. As she runs, she spots the White Rabbit. Aha! This was the Rabbit that led her here. And she was determined to make him pay. She runs faster, calling out to the White Rabbit. The Rabbit, indifferent to Alice calling him, untied the knot that held the boat to shore and jumped in. The Rabbit sails away just as Alice reaches the shore. She was about to lose all hope when she spotted another boat. Alice brightened up and quickly untied the knot holding this boat to the shore. She sets sail, right behind the Rabbit, determined to get to him. As her boat moves with waves leading her closer to the Rabbit, a Mole pops his little head out. Alice is surprised to see him. 'Hello there!', the Mole waves to her with a smile. Before she can recover, an Owl, a Fish, and a Turtle join them. 'Hey!', the others wave to her.\n\n";
     }
     void display_third()
     {
-        cout << "\n\n\n The animals quickly leave Alice's side as she approaches the island. She was so caught up with their talking, she forgot about the White Rabbit! Nonetheless, as she ties the boat to shore, she tries to recall everything the animals taught her. After all, they did warn her about a maze. She wonders what it was all about. Just as Alice begins to walk onto the island, she spots the Rabbit again! She breaks into a sprint, chasing behind the Rabbit. But as always, the Rabbit was too quick for her. She chased him through the highs and lows of the jungle until she managed to reach a maze. She tried to follow the Rabbit in, but she quickly lost sight of him. Alice suddenly remembers the warning of the animals....This was the maze they were talking about! With newfound determination, Alice steps forward. She was going to make her way out of this\n\n." << endl;
+        cout << "\n\n\n The animals quickly leave Alice's side as she approaches the island. She was so caught up with their talking, she forgot about the White Rabbit! Nonetheless, as she ties the boat to shore, she tries to recall everything the animals taught her. After all, they did warn her about a maze. She wondered what it was all about. Just as Alice begins to walk onto the island, she spots the Rabbit again! She breaks into a sprint, chasing behind the Rabbit. But as always, the Rabbit was too quick for her. She chased him through the highs and lows of the jungle until she managed to reach a maze. She tried to follow the Rabbit in, but she quickly lost sight of him. Alice suddenly remembers the warning from the animals...This was the maze they were talking about! With newfound determination, Alice steps forward. She was going to make her way out of this\n\n." << endl;
     }
     void display_forth()
     {
@@ -569,7 +569,7 @@ class Alice : public hall_of_knowledge , public Animal , public maze , public ma
 };
 int main()
 {
-   Alice A,B,C,D,E,F,G,H,I,J;
+   Alice A, B,C,D,E,F,G,H,I,J;
    //INTRO FN
    A.display_first();
    //hall of knowledge
@@ -609,11 +609,11 @@ int main()
         F.ask();
     }
     cout << "You have escaped the maze!" << endl;
-    //forth stage
+    //fourth stage
     G.display_forth();
     //madhatter
     H.madhatter::get_question();
-    //fith stage 
+    //fifth stage 
     I.display_fifth();
     //queen
     J.fight();
